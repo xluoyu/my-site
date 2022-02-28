@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint --ext .js,.vue,.ts src",
+    "lint:fix": "npx eslint ./src/**/*.vue --fix"
   },
   "dependencies": {
     "axios": "^0.26.0",
@@ -16,9 +18,26 @@
   },
   "devDependencies": {
     "@types/node": "^17.0.21",
+    "@typescript-eslint/eslint-plugin": "^5.12.1",
+    "@typescript-eslint/parser": "^5.12.1",
     "@vitejs/plugin-vue": "^2.2.0",
+    "eslint": "^8.10.0",
+    "eslint-plugin-vue": "^8.5.0",
+    "husky": "4.3.8",
+    "less": "^4.1.2",
+    "lint-staged": "^12.3.4",
     "typescript": "^4.5.4",
     "vite": "^2.8.0",
     "vue-tsc": "^0.29.8"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{ts,vue}": [
+      "eslint --fix"
+    ]
   }
 }

@@ -19,14 +19,14 @@ export const CreateTodo = (data: {
   content?: String
 }) => {
   return Request({
-    url: `/todo`,
+    url: '/todo',
     method: 'POST',
     data
   })
 }
 
 export const PatchTodo = (data: {
-  id: Number,
+  id: Number | null,
   title: String,
   content?: String
 }) => {
