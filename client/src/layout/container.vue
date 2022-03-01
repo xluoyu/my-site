@@ -1,11 +1,6 @@
 <template>
   <div class="container">
-    <aside>
-      <div class="user-box">
-        <img src="" alt="">
-        <p></p>
-      </div>
-    </aside>
+    <Aside />
     <main>
       <slot></slot>
     </main>
@@ -13,7 +8,7 @@
 </template>
 
 <script setup lang="ts">
-
+  import Aside from './components/Aside.vue'
 </script>
 
 <style lang="less" scoped>
