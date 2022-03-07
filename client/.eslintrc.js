@@ -7,7 +7,7 @@ module.exports = {
   },
   extends: [
     'plugin:vue/vue3-recommended',
-    'plugin:@typescript-eslint/recommended'
+    'plugin:@typescript-eslint/recommended',
   ],
   /*
   * 解决引入ts文件import xxx (不带文件后缀) eslint报错问题

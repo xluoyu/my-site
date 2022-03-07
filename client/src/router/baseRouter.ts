@@ -3,7 +3,7 @@ import { RouteRecordRaw } from 'vue-router'
 const baseRouter:RouteRecordRaw[] = [
   {
     path: '/',
-    component: () => import('@/views/index.vue')
+    component: () => import('@/views/home/index.vue')
   },
   {
     path: '/todo',
