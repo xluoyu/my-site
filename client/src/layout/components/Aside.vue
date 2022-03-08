@@ -1,5 +1,5 @@
 <template>
-  <aside class="aside">
+  <aside class="aside w-$aside-width">
     <div class="logo">
       <img src="@/assets/logo.png" alt="">
     </div>
@@ -47,7 +47,8 @@
   position: fixed;
   left: 0;
   top: 0;
-  width:var(--aside-width);
+  z-index: 5;
+  // width:var(--aside-width);
   height:100%;
   background: rgba(15, 15, 15, .4);
   color: #ccc;

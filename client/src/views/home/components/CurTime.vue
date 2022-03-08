@@ -6,6 +6,7 @@
 </template>
 
 <script setup lang="ts">
+  import { numAddZero } from '@/utils'
   import { ref } from 'vue'
 
   const dayArr = {
@@ -23,9 +24,9 @@
 
   const timeFun = () => {
     const time = new Date()
-    curDate.value = time.getMonth() + 1 + '月' + time.getDate() + '日'
+    curDate.value = numAddZero(time.getMonth() + 1) + '月' + numAddZero(time.getDate()) + '日'
     curDay.value = dayArr[time.getDay()]
-    cutTime.value = time.getHours() + ':' + time.getMinutes()
+    cutTime.value = numAddZero(time.getHours()) + ':' + numAddZero(time.getMinutes())
   }
   timeFun()
   setInterval(() => {
@@ -42,7 +43,8 @@
     font-size: 56px;
   }
   p{
-    font-size: 16px;
+    font-size: 18px;
+    margin: 10px 0;
   }
   span{
     display: inline-block;

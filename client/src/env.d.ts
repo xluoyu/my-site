@@ -11,3 +11,9 @@ interface ImportMetaEnv {
   readonly VITE_BASE_URL: string
   // 更多环境变量...
 }
+
+// declare global {
+interface Window {
+  WIDGET: { CONFIG: { [propName: string]: string } }
+}
+// }
