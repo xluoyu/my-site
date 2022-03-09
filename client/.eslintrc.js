@@ -50,7 +50,13 @@ module.exports = {
     'eqeqeq': ['error', 'always'],
 
     // 禁止出现未使用过的变量
-    'no-unused-vars': 'error',
+    'no-unused-vars': [
+      0,
+      {
+        vars: 'local',
+        args: 'after-used'
+      }
+    ],
 
     // 强制在关键字前后使用一致的空格
     /* 示例

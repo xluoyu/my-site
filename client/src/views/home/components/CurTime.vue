@@ -1,7 +1,7 @@
 <template>
-  <div class="time-container">
-    <h2>{{cutTime}}</h2>
-    <p><span>{{curDate}}</span> <span>星期{{curDay}}</span></p>
+  <div class="text-current text-center time-container mt-6 <xl:mt-3">
+    <h2 class="text-6xl <xl:text-4xl">{{cutTime}}</h2>
+    <p class="text-lg  <xl:text-sm py-2"><span>{{curDate}}</span> <span>星期{{curDay}}</span></p>
   </div>
 </template>
 
@@ -37,18 +37,9 @@
 
 <style lang="less" scoped>
 .time-container{
-  text-align: center;
-  color: var(--theme-color);
-  h2{
-    font-size: 56px;
-  }
-  p{
-    font-size: 18px;
-    margin: 10px 0;
-  }
   span{
     display: inline-block;
-    margin: 0 10px;
+    margin: 0 .2em;
   }
 }
 </style>

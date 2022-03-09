@@ -6,6 +6,7 @@ const server = axios.create({
 })
 
 server.interceptors.request.use((config) => {
+
   return config
 })
 
@@ -13,7 +14,7 @@ server.interceptors.response.use(res => {
   return res
 })
 
-export const Get = (options: any) => server.get(options)
-export const Post = (options: any) => server.post(options)
+export const Get = (options: any) => server({...options, method: 'GET'})
+export const Post = (options: any) => server({...options, method: 'POST'})
 
 export default server

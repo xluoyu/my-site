@@ -17,11 +17,16 @@
         <p>{{item.label}}</p>
       </div>
     </div>
+    <div class="absolute bottom-16px cursor-pointer text-center w-full">
+      <el-icon size="24px">
+        <Setting />
+      </el-icon>
+    </div>
   </aside>
 </template>
 
 <script setup lang="ts">
-  import {HomeFilled, Reading} from '@element-plus/icons-vue'
+  import {HomeFilled, Reading, Setting} from '@element-plus/icons-vue'
   import { ref } from 'vue'
   const pageList = [
     {

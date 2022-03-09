@@ -1,11 +1,14 @@
 <template>
-  <div class="container">
+  <div class="w-100vw h-100vh">
     <Background />
     <Aside />
-    <TopBar />
-    <main class="main">
+    <div class="main">
+      <TopBar />
+      <!-- <div class="flex-1"> -->
       <slot></slot>
-    </main>
+      <!-- </div> -->
+      <Hitokoto />
+    </div>
   </div>
 </template>
 
@@ -13,20 +16,19 @@
   import Aside from './components/Aside.vue'
   import Background from './components/Background.vue'
   import TopBar from './components/TopBar.vue'
+  import Hitokoto from './components/Hitokoto.vue'
 </script>
 
 <style lang="less" scoped>
-.container{
-  width: 100vw;
-  height: 100vh;
-}
 .main{
   width: 100vw;
   height: 100vh;
-  // margin-left: var(--aside-width);
-  padding: 50px 60px 20px;
+  // padding: 50px 60px 20px;
   box-sizing: border-box;
-  position:fixed;
-  // z-index: 2;
+  // position:fixed;
+  // padding-left: var(--aside-width);
+  position: fixed;
+  display: flex;
+  flex-direction: column;
 }
 </style>

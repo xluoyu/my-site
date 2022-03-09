@@ -1,6 +1,8 @@
 <template>
-  <div class="topbar">
-    <div class="align-center"></div>
+  <div class="topbar px-2">
+    <div class="align-center">
+
+    </div>
     <div class="align-center">
       <div class="align-center weather">
         <div id="he-plugin-simple"></div>
@@ -42,21 +44,18 @@
 
 <style lang="less" scoped>
 .topbar{
-  position: fixed;
-  top: 0;
-  left: var(--aside-width);
-  z-index: 2;
+  // position: fixed;
+  // top: 0;
+  // left: var(--aside-width);
+  // z-index: 2;
   background: rgba(255,255,255,.4);
-  width: calc(100vw - var(--aside-width));
+  // width: calc(100vw - var(--aside-width));
   box-sizing: border-box;
-  height: 24px;
+  margin-left: var(--aside-width);
+  height: var(--topbar-height);
   backdrop-filter: blur(4px);
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-.weather{
-  // height: 100%;
-  // width: 120px;
 }
 </style>
