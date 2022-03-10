@@ -1,3 +1,4 @@
+import { DefineComponent } from 'vue'
 
 export enum IOpenType {
   Component = 'Component', // 内部组件
@@ -26,4 +27,5 @@ export interface IApp {
   status?: boolean; // 开发状态
   children?: IApp[]; // 应用组
   pageUrl?: string; // 外部链接
+  component?: DefineComponent<{}, {}, any>
 }

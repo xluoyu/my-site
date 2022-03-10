@@ -18,7 +18,11 @@ export default defineConfig({
     }
   },
   plugins: [
-    vue(),
+    vue({
+      script:{
+        refSugar:true
+      }
+    }),
     AutoImport({
       resolvers: [ElementPlusResolver()],
       imports: ['vue', 'vue-router'],

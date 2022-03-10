@@ -6,20 +6,25 @@
 
 <script setup lang="ts">
   import App from './App.vue'
-  import { IAppType, IOpenType, IApp } from '../../../types/app.type'
+  import { IAppType, IOpenType, IApp } from '@/types/app.type'
+
   const appList:IApp[] = [
     {
-      name: '聊天室',
+      name: '音乐聊天室',
       icon: 'https://xluoyu.github.io/image-riverbed/iphone/safari.png',
       key: 'chat',
       type: IAppType.App,
-      openType: IOpenType.Component
+      openType: IOpenType.Component,
+      component: defineAsyncComponent(() =>
+        import('@/packages/music/index.vue')
+      )
     }, {
-      name: '聊天室',
+      name: '网易云',
       icon: 'https://xluoyu.github.io/image-riverbed/iphone/safari.png',
       key: 'chat1',
       type: IAppType.App,
-      openType: IOpenType.Component
+      openType: IOpenType.Iframe,
+      pageUrl: 'https://vueuse.org/shared/useToggle/#usage'
     }
   ]
 </script>
@@ -28,7 +33,7 @@
 .gridSpace{
   display:grid;
   grid-auto-flow: row dense;
-  grid-template-columns: repeat(auto-fill, var(--app-width));
+  grid-template-columns: repeat(auto-fill, calc(var(--app-width) + 10px));
   grid-template-rows: repeat(auto-fill, var(--app-height));
   grid-gap: var(--grid-row-gap) var(--grid-col-gap);
   justify-content: center;

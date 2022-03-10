@@ -1,18 +1,19 @@
 <template>
-  <!-- <el-space direction="vertical" size="large" style="width: 100%"> -->
   <div class="home">
     <CurTime />
     <!-- <Search /> -->
     <GridSpace />
-  </div>
+    <AppLayout>
 
-  <!-- </el-space> -->
+    </AppLayout>
+  </div>
 </template>
 
 <script lang="ts" setup>
   import CurTime from './components/CurTime.vue'
   // import Search from './components/Search.vue'
   import GridSpace from './components/GridSpace.vue'
+  import AppLayout from './components/AppLayout.vue'
 
 </script>
 

@@ -3,8 +3,57 @@
   width: var(--app-width);
   height: var(--app-height);
   text-align: center;
+  margin: 0 auto;
+  img{
+    margin: 0 auto;
+    width: 60px;
+    height: 60px;
+  }
   p{
     line-height: 30px;
     font-size: 14px;
+  }
+}
+
+.el-overlay-dialog {
+  overflow: hidden !important;
+}
+.appLayout{
+  --appLayout-height: 80vh;
+  resize: both;
+  overflow:auto;
+  min-width: 400px;
+  max-height: var(--appLayout-height);
+  border-radius: var(--border-radius) !important;
+  transition: all .3s;
+  transform-origin: center top;
+  &.is-fullscreen{
+    --appLayout-height: 100vh;
+  }
+  
+  .el-dialog__header{
+    display: none;
+  }
+  .el-dialog__footer{
+    display: none;
+  }
+  .el-dialog__body{
+    position: relative;
+    padding: 0;
+  }
+  .action-bar{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .action-btn{
+    width:  34px;
+    height: 24px;
+    text-align: center;
+    line-height: 28px;
+    transition: all 0.3s;
+    cursor: pointer;
   }
 }
