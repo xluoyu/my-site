@@ -13,11 +13,10 @@ export enum IAppType {
   AppArray = 'AppArray' // 应用组
 }
 
-export interface IApp {
+ interface _IApp {
   name: string; // app名称
   icon?: string; // 图标
-  key: string,
-  openType: IOpenType; // 打开方式
+  key: string;
   type: IAppType; // 应用类型
   /**
    * 占据位置
@@ -26,6 +25,18 @@ export interface IApp {
   size?: [number, number];
   status?: boolean; // 开发状态
   children?: IApp[]; // 应用组
-  pageUrl?: string; // 外部链接
-  component?: DefineComponent<{}, {}, any>
 }
+
+// 当 openType == 组件时，component 必填
+interface _IApp_Component extends _IApp {
+  openType: IOpenType.Component;
+  component: DefineComponent<{}, {}, any>
+}
+
+// 当 openType == 其余时，pageUrl 必填
+interface _IApp_Url extends _IApp {
+  openType: IOpenType.Iframe | IOpenType.Blank | IOpenType.Qiankun;
+  pageUrl: string
+}
+
+export type IApp = _IApp_Component | _IApp_Url

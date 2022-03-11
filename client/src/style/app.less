@@ -1,5 +1,5 @@
 .app{
-  color: currentColor;
+  color: #fff;
   width: var(--app-width);
   height: var(--app-height);
   text-align: center;
@@ -30,7 +30,6 @@
   &.is-fullscreen{
     --appLayout-height: 100vh;
   }
-  
   .el-dialog__header{
     display: none;
   }
@@ -42,11 +41,13 @@
     padding: 0;
   }
   .action-bar{
-    position: absolute;
+    width: 100%;
+    position: sticky;
     top: 0px;
     right: 0px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
   }
   .action-btn{
     width:  34px;
@@ -55,5 +56,9 @@
     line-height: 28px;
     transition: all 0.3s;
     cursor: pointer;
+  }
+  .appLayout-container{
+    width: 100%;
+    height: calc(var(--appLayout-height) - 24px);
   }
 }

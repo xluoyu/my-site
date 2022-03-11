@@ -13,29 +13,42 @@
     custom-class="appLayout scrollbar-color"
   >
     <div class="action-bar">
-      <div class="action-btn hover:(bg-cyan-600 text-light-50)" @click="isFullscreen = !isFullscreen">
-        <el-icon>
-          <FullScreen />
-        </el-icon>
+      <div class="flex items-center">
+        <template v-if="curApp?.openType !== IOpenType.Component">
+          <div class="action-btn hover:(bg-cyan-600 text-light-50)" title="访问原网站" @click="openWindow">
+            <el-icon>
+              <Promotion />
+            </el-icon>
+          </div>
+          <el-button type="text" size="small" @click="openWindow">{{curApp?.pageUrl}}</el-button>
+        </template>
       </div>
-      <div class="action-btn hover:(bg-gray-400 text-light-50)" @click="minimize">
-        <el-icon>
-          <Minus />
-        </el-icon>
+      <div class="flex">
+        <div class="action-btn hover:(bg-cyan-600 text-light-50)" title="浏览器全屏" @click="isFullscreen = !isFullscreen">
+          <el-icon>
+            <FullScreen />
+          </el-icon>
+        </div>
+        <div class="action-btn hover:(bg-gray-400 text-light-50)" title="最小化" @click="minimize">
+          <el-icon>
+            <Minus />
+          </el-icon>
+        </div>
+        <div class="action-btn hover:(bg-red-600 text-light-50)" title="关闭" @click="closeApp">
+          <el-icon>
+            <Close />
+          </el-icon>
+        </div>
       </div>
-      <div class="action-btn hover:(bg-red-600 text-light-50)" @click="closeApp">
-        <el-icon>
-          <Close />
-        </el-icon>
-      </div>
+
     </div>
 
-    <div>
+    <div class="appLayout-container">
       <template v-if="curApp?.openType === IOpenType.Component">
         <component :is="curApp.component"></component>
       </template>
       <template v-if="curApp?.openType === IOpenType.Iframe">
-        <iframe :src="curApp.pageUrl" frameborder="0" class="w-full h-$appLayout-height"></iframe>
+        <iframe :src="curApp.pageUrl" frameborder="0" class="w-full h-full"></iframe>
       </template>
     </div>
 
@@ -44,14 +57,12 @@
 
 <script setup lang="ts">
   import { useAppLayoutStore } from '@/stores/appLayout'
-  import {Close, Minus, FullScreen} from '@element-plus/icons-vue'
+  import {Close, Minus, FullScreen, Promotion} from '@element-plus/icons-vue'
   import { storeToRefs } from 'pinia'
   import { IOpenType } from '@/types/app.type'
   const useAppLayout = useAppLayoutStore()
   const { showAppLayout, isFullscreen, curApp } = storeToRefs(useAppLayout)
-  const { closeApp, minimize} = useAppLayout
-
-
+  const { closeApp, minimize, openWindow} = useAppLayout
 </script>
 
 <style lang="less" scoped>

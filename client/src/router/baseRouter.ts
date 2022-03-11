@@ -6,6 +6,10 @@ const baseRouter:RouteRecordRaw[] = [
     component: () => import('@/views/home/index.vue')
   },
   {
+    path: '/docs',
+    component: () => import('@/views/docs/index.vue')
+  },
+  {
     path: '/todo',
     component: () => import('@/views/todo.vue')
   },

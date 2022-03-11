@@ -1,5 +1,5 @@
 <template>
-  <div class="text-current text-center time-container mt-6 <xl:mt-3">
+  <div class="text-light-50 text-center time-container mt-6 <xl:mt-3">
     <h2 class="text-6xl <xl:text-4xl">{{cutTime}}</h2>
     <p class="text-lg  <xl:text-sm py-2"><span>{{curDate}}</span> <span>星期{{curDay}}</span></p>
   </div>

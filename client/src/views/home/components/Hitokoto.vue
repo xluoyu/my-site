@@ -1,5 +1,5 @@
 <template>
-  <div class="text-current text-center mx-auto cursor-default hitokoto">
+  <div class="text-light-50 text-center mx-auto cursor-default hitokoto">
     『 {{hitokoto.text}} 』
     <p>
       ——

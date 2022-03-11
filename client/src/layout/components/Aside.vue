@@ -4,18 +4,18 @@
       <img src="@/assets/logo.png" alt="">
     </div>
     <div class="tabbar">
-      <div
+      <router-link
+        :to="item.url"
         class="tabbar-item"
-        :class="{ 'active': activeItem === item.url }"
+        :class="{ 'active': route.path === item.url }"
         v-for="item in pageList"
         :key="item.label"
-        @click="changeActiveItem(item.url)"
       >
         <el-icon size="18px">
           <component :is="item.icon" :key="item.icon" />
         </el-icon>
         <p>{{item.label}}</p>
-      </div>
+      </router-link>
     </div>
     <div class="absolute bottom-16px cursor-pointer text-center w-full">
       <el-icon size="24px">
@@ -27,7 +27,6 @@
 
 <script setup lang="ts">
   import {HomeFilled, Reading, Setting} from '@element-plus/icons-vue'
-  import { ref } from 'vue'
   const pageList = [
     {
       label: '主页',
@@ -41,10 +40,8 @@
     }
   ]
 
-  const activeItem = ref('/')
-  const changeActiveItem = (url) => {
-    activeItem.value = url
-  }
+  const route = useRoute()
+  console.log(route)
 </script>
 
 <style lang="less" scoped>
@@ -67,7 +64,9 @@
   }
   .tabbar{
     .tabbar-item {
+      display: block;
       text-align: center;
+      color: #ccc;
       cursor: pointer;
       font-size: 14px;
       padding: 15px 0;
