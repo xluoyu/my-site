@@ -1,24 +1,9 @@
 import { Suspense } from 'react'
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom'
 import DefaultLayout from '../layout'
-import Index from '../views/Index'
 import Login from '../views/Login'
+import NotFound from '@/views/404'
 import routes from './routes'
-
-// const ChildrenRoutes = () => {
-//   return (
-//     routes.map(item => {
-//       return (
-//         item.children
-//         <Route key={item.path} path={item.path} element={
-//           <Suspense fallback={null}>
-//             <item.component />
-//           </Suspense>
-//         }/>
-//       )
-//     })
-//   )
-// }
 
 function Router () {
   return (
@@ -42,7 +27,9 @@ function Router () {
               }
             })
           }
+          <Route path='404' element={<NotFound />} />
         </Route>
+        <Route path="*" element={<Navigate to='/404' />}></Route>
       </Routes>
     </BrowserRouter>
   )
