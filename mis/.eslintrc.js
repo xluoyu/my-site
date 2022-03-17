@@ -5,7 +5,7 @@ module.exports = {
     es2021: true,
     node: true,
   },
-  extends: "eslint:recommended",
+  extends: ["eslint:recommended", "plugin:prettier/recommended"],
   /*
   * 解决引入ts文件import xxx (不带文件后缀) eslint报错问题
   * https://stackoverflow.com/questions/55198502/using-eslint-with-typescript-unable-to-resolve-path-to-module

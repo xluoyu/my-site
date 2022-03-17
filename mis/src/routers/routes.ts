@@ -26,9 +26,9 @@ const routes:IRoute[] = [
     icon: ReadOutlined,
     path: 'docs',
     children: [
-      { name: '线上文章', path: 'online' },
-      { name: '草稿箱', path: 'drafts' },
-      { name: '标签管理', path: 'tags' },
+      { name: '线上文章', path: 'online', component: lazy(() => import('../views/docs/Online'))},
+      { name: '草稿箱', path: 'drafts', component: lazy(() => import('../views/docs/Drafts'))},
+      { name: '标签管理', path: 'tags', component: lazy(() => import('../views/docs/Tags'))},
     ]
   },
 ];
