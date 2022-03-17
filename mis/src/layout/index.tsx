@@ -1,11 +1,11 @@
-import { Breadcrumb, Layout } from 'antd';
+import { Layout } from 'antd';
 import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
 import { Outlet } from 'react-router-dom';
 const { Header, Content, Sider } = Layout;
 import React, { useState } from 'react';
 import MenuComponent from './components/Menu';
 import User from './components/User';
-import Link from '@/components/Link';
+import Bread from './components/Bread';
 
 function BaseLayout () {
   const [collapsed, setCollapsed] = useState(false)
@@ -25,16 +25,7 @@ function BaseLayout () {
             })}
             <User />
           </Header>
-          <Breadcrumb className="m-16px">
-            <Breadcrumb.Item>Home</Breadcrumb.Item>
-            <Breadcrumb.Item>
-              <Link>Application Center</Link>
-            </Breadcrumb.Item>
-            <Breadcrumb.Item>
-              <a href="">Application List</a>
-            </Breadcrumb.Item>
-            <Breadcrumb.Item>An Application</Breadcrumb.Item>
-          </Breadcrumb>
+          <Bread></Bread>
           <Content
             className="site-layout-background"
             style={{
