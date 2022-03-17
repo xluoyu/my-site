@@ -1,10 +1,9 @@
 import { Layout, Menu, Breadcrumb } from 'antd';
 import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
 import routes from '../routers'
-import { Outlet, Route, Routes } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
-import Index from '../views/Index'
 
 function BaseLayout () {
   return (
