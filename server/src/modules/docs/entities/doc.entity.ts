@@ -15,8 +15,9 @@ export class Doc {
     type: 'char',
     length: 50,
     comment: '摘要',
+    default: '',
   })
-  abstract: string;
+  description: string;
 
   @Column({
     type: 'varchar',
@@ -44,4 +45,18 @@ export class Doc {
     default: () => 'CURRENT_TIMESTAMP',
   })
   updateTime: Date;
+
+  @Column({
+    type: 'char',
+    length: 50,
+    comment: '文档存储地址',
+    default: '',
+  })
+  path: string;
+
+  @Column({
+    type: 'int',
+    comment: '文章状态: 1 => 正常; 0 => 隐藏',
+  })
+  status: string;
 }

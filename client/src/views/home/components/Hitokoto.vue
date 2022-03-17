@@ -21,10 +21,10 @@
     fromWho: ''
   })
   onMounted(() => {
-    GetHitokoto().then(res => {
-      hitokoto.text = res.data.hitokoto
-      hitokoto.fromWho = res.data.from_who
-      hitokoto.from = res.data.from
+    GetHitokoto().then((res: any) => {
+      hitokoto.text = res.hitokoto
+      hitokoto.fromWho = res.from_who
+      hitokoto.from = res.from
     })
   })
 </script>
