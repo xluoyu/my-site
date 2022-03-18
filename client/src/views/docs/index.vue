@@ -1,17 +1,17 @@
 <template>
-  <div class="w-400px bg-light-50 m-auto" v-html="docs">
+  <div class="w-400px bg-light-50 m-auto">
+    <Test ref="current" />
   </div>
 </template>
 
 <script setup lang="ts">
-  import { GetTestDocs } from '@/api/docs'
-  const docs = ref('')
+  // import { GetTestDocs } from '@/api/docs'
+  import Test from '@/posts/text.md'
+  const current = ref()
+  // const docs = ref('')
+  console.log(Test)
   onMounted(() => {
-    GetTestDocs().then(res => {
-      docs.value = res.data.html
-
-      console.log(docs.value)
-    })
+    console.log(current.value)
   })
 
 </script>

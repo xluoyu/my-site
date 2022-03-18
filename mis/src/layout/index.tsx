@@ -25,7 +25,7 @@ function BaseLayout () {
             })}
             <User />
           </Header>
-          <Bread></Bread>
+          <Bread />
           <Content
             className="site-layout-background"
             style={{

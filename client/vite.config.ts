@@ -5,6 +5,8 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import WindiCSS from 'vite-plugin-windicss'
+import Markdown from 'vite-plugin-md'
+import Pages from 'vite-plugin-pages'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -19,6 +21,7 @@ export default defineConfig({
   },
   plugins: [
     vue({
+      include: [/\.vue$/, /\.md$/],
       script:{
         refSugar:true
       }
@@ -26,12 +29,19 @@ export default defineConfig({
     AutoImport({
       resolvers: [ElementPlusResolver()],
       imports: ['vue', 'vue-router'],
-      dts: 'src/auto-import.d.ts'
+      dts: 'src/auto-imports.d.ts'
     }),
     Components({
       resolvers: [ElementPlusResolver()],
     }),
-    WindiCSS()
+    WindiCSS(),
+    Markdown(),
+    Pages({
+      dirs: [
+        { dir: 'src/posts', baseRoute: 'posts' },
+      ],
+      extensions: ['vue', 'md'],
+    }),
   ],
   resolve: {
     alias: [

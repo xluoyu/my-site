@@ -2,6 +2,9 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
   import Container from './layout/container.vue'
+
+  const router = useRouter()
+  console.log(router.getRoutes())
 </script>
 
 <template>
