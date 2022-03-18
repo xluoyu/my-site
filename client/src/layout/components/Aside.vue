@@ -1,20 +1,26 @@
 <template>
   <aside class="aside w-$aside-width">
     <div class="logo">
-      <img src="@/assets/logo.png" alt="">
+      <img
+        src="@/assets/logo.png"
+        alt=""
+      >
     </div>
     <div class="tabbar">
       <router-link
+        v-for="item in pageList"
+        :key="item.label"
         :to="item.url"
         class="tabbar-item"
         :class="{ 'active': route.path === item.url }"
-        v-for="item in pageList"
-        :key="item.label"
       >
         <el-icon size="18px">
-          <component :is="item.icon" :key="item.icon" />
+          <component
+            :is="item.icon"
+            :key="item.icon"
+          />
         </el-icon>
-        <p>{{item.label}}</p>
+        <p>{{ item.label }}</p>
       </router-link>
     </div>
     <div class="absolute bottom-16px cursor-pointer text-center w-full">
@@ -26,21 +32,21 @@
 </template>
 
 <script setup lang="ts">
-  import {HomeFilled, Reading, Setting} from '@element-plus/icons-vue'
-  const pageList = [
-    {
-      label: '主页',
-      icon: HomeFilled,
-      url: '/'
-    },
-    {
-      label: '文章',
-      icon: Reading,
-      url: '/posts'
-    }
-  ]
+import { HomeFilled, Reading, Setting } from '@element-plus/icons-vue'
+const pageList = [
+  {
+    label: '主页',
+    icon: HomeFilled,
+    url: '/',
+  },
+  {
+    label: '文章',
+    icon: Reading,
+    url: '/posts',
+  },
+]
 
-  const route = useRoute()
+const route = useRoute()
 </script>
 
 <style lang="less" scoped>

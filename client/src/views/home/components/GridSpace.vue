@@ -1,32 +1,16 @@
 <template>
   <div class="gridSpace">
-    <App v-for="item in appList" :key="item.key" :app="item" />
+    <App
+      v-for="item in AppList"
+      :key="item.key"
+      :app="item"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
-  import App from './App.vue'
-  import { IAppType, IOpenType, IApp } from '@/types/app.type'
-
-  const appList:IApp[] = [
-    {
-      name: '音乐聊天室',
-      icon: 'https://xluoyu.github.io/image-riverbed/iphone/safari.png',
-      key: 'chat',
-      type: IAppType.App,
-      openType: IOpenType.Component,
-      component: defineAsyncComponent(() =>
-        import('@/packages/music/index.vue')
-      )
-    }, {
-      name: '网易云',
-      icon: 'https://xluoyu.github.io/image-riverbed/iphone/safari.png',
-      key: 'chat1',
-      type: IAppType.App,
-      openType: IOpenType.Iframe,
-      pageUrl: 'https://vueuse.org/shared/useToggle/#usage'
-    }
-  ]
+import App from './App.vue'
+import AppList from '@/packages'
 </script>
 
 <style lang="less" scoped>

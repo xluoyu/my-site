@@ -3,12 +3,12 @@
  * @param num
  * @returns
  */
-export const numAddZero = (num:number | string):string => {
+export const numAddZero = (num: number | string): string => {
   num = Number(num)
-  if (isNaN(num)) {
+  if (isNaN(num))
     console.warn('[utils/numAddZero]', '接收参数不是数字')
-  }
-  return num < 10 ? '0' + num : num + ''
+
+  return num < 10 ? `0${num}` : `${num}`
 }
 
 export const addScript = (url: string, cb?: () => void): void => {
@@ -16,7 +16,6 @@ export const addScript = (url: string, cb?: () => void): void => {
   s.type = 'text/javascript'
   s.src = url
   document.body.appendChild(s)
-  if (cb) {
+  if (cb)
     s.onload = cb
-  }
 }

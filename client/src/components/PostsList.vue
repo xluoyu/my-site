@@ -5,9 +5,9 @@
 </template>
 
 <script setup lang="ts">
-  const router = useRouter()
-  const routes = router.getRoutes()
-  console.log(routes)
+const router = useRouter()
+const routes = router.getRoutes()
+console.log(routes)
 </script>
 
 <style scoped>

@@ -12,7 +12,6 @@
     "noImplicitAny": false,
     "lib": ["esnext", "dom"],
     "skipLibCheck": true,
-    "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]

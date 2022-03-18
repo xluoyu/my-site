@@ -1,7 +1,6 @@
 <template>
   <div class="home">
     <CurTime />
-    <!-- <Search /> -->
     <GridSpace />
     <AppLayout />
     <Hitokoto />
@@ -9,11 +8,11 @@
 </template>
 
 <script lang="ts" setup>
-  import CurTime from './components/CurTime.vue'
-  // import Search from './components/Search.vue'
-  import GridSpace from './components/GridSpace.vue'
-  import AppLayout from './components/AppLayout.vue'
-  import Hitokoto from './components/Hitokoto.vue'
+import CurTime from './components/CurTime.vue'
+// import Search from './components/Search.vue'
+import GridSpace from './components/GridSpace.vue'
+import AppLayout from './components/AppLayout.vue'
+import Hitokoto from './components/Hitokoto.vue'
 
 </script>
 

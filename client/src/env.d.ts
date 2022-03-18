@@ -8,7 +8,7 @@ declare module '*.vue' {
 }
 
 declare module '*.md' {
-  import { ComponentOptions } from 'vue'
+  import type { ComponentOptions } from 'vue'
   const Component: ComponentOptions
   export default Component
 }
@@ -20,6 +20,6 @@ interface ImportMetaEnv {
 
 // declare global {
 interface Window {
-  WIDGET: { CONFIG: { [propName: string]: string } }
+  WIDGET: { CONFIG: Record<string, string> }
 }
 // }

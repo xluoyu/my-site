@@ -7,7 +7,6 @@ declare module 'vue' {
     ElButton: typeof import('element-plus/es')['ElButton']
     ElDialog: typeof import('element-plus/es')['ElDialog']
     ElIcon: typeof import('element-plus/es')['ElIcon']
-    HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     Post: typeof import('./src/components/Post.vue')['default']
     PostsList: typeof import('./src/components/PostsList.vue')['default']
   }

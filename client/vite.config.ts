@@ -1,6 +1,6 @@
+import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import { resolve } from 'path'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
@@ -17,16 +17,16 @@ export default defineConfig({
     proxy: {
       '/api': {
         target: 'http://192.168.0.184:3000/',
-        changeOrigin: true
-      }
-    }
+        changeOrigin: true,
+      },
+    },
   },
   plugins: [
     vue({
       include: [/\.vue$/, /\.md$/],
-      script:{
-        refSugar:true
-      }
+      script: {
+        refSugar: true,
+      },
     }),
     Markdown({
       wrapperComponent: 'post',
@@ -34,14 +34,14 @@ export default defineConfig({
     AutoImport({
       resolvers: [ElementPlusResolver()],
       imports: ['vue', 'vue-router'],
-      dts: 'src/auto-imports.d.ts'
+      dts: 'src/auto-imports.d.ts',
     }),
     Components({
       extensions: ['vue', 'md'],
       dts: true,
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       resolvers: [
-        ElementPlusResolver()
+        ElementPlusResolver(),
       ],
     }),
     WindiCSS(),
@@ -68,8 +68,8 @@ export default defineConfig({
     alias: [
       {
         find: '@',
-        replacement: resolve(__dirname, './src')
-      }
-    ]
-  }
+        replacement: resolve(__dirname, './src'),
+      },
+    ],
+  },
 })

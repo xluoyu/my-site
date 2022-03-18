@@ -1,6 +1,6 @@
-import { ITheme } from '@/types/setting.type'
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
+import { ITheme } from '@/types/setting.type'
 
 export const useSettingStore = defineStore('setting', () => {
   // 界面主题
@@ -9,9 +9,8 @@ export const useSettingStore = defineStore('setting', () => {
     theme.value = target
   }
 
-
   return {
     theme,
-    changeTheme
+    changeTheme,
   }
 })

@@ -4,15 +4,15 @@
     <Aside />
     <div class="main">
       <TopBar />
-      <router-view></router-view>
+      <router-view />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-  import Aside from './components/Aside.vue'
-  import TopBar from './components/TopBar.vue'
-  import Background from './components/Background.vue'
+import Aside from './components/Aside.vue'
+import TopBar from './components/TopBar.vue'
+import Background from './components/Background.vue'
 </script>
 
 <style lang="less" scoped>

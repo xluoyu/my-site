@@ -1,6 +1,9 @@
 <template>
   <div class="container-bg">
-    <img src="https://itab.s3.ladydaily.com/files/itab/solar/2.jpg" alt="">
+    <img
+      src="https://itab.s3.ladydaily.com/files/itab/solar/2.jpg"
+      alt=""
+    >
   </div>
 </template>
 

@@ -7,7 +7,7 @@
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
     "lint": "eslint --ext .js,.vue,.ts src",
-    "lint:fix": "npx eslint ./src/**/*.vue --fix"
+    "lint:fix": "npx eslint --ext .js,.vue,.ts src --fix"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^1.0.0",
@@ -21,6 +21,7 @@
     "vue-router": "^4.0.12"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^0.18.8",
     "@types/lodash-es": "^4.17.6",
     "@types/node": "^17.0.21",
     "@typescript-eslint/eslint-plugin": "^5.12.1",
