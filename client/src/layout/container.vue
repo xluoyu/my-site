@@ -3,6 +3,7 @@
     <Background />
     <Aside />
     <div class="main">
+      <TopBar />
       <router-view></router-view>
     </div>
   </div>
@@ -10,6 +11,7 @@
 
 <script setup lang="ts">
   import Aside from './components/Aside.vue'
+  import TopBar from './components/TopBar.vue'
   import Background from './components/Background.vue'
 </script>
 

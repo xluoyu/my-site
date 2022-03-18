@@ -36,12 +36,11 @@
     {
       label: '文章',
       icon: Reading,
-      url: '/docs'
+      url: '/posts'
     }
   ]
 
   const route = useRoute()
-  console.log(route)
 </script>
 
 <style lang="less" scoped>

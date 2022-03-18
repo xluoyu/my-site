@@ -11,14 +11,18 @@ const baseRouter:RouteRecordRaw[] = [
     component: () => import('@/views/404.vue')
   },
   {
-    path: '/docs',
-    component: () => import('@/views/docs/index.vue')
+    path: '/posts',
+    name: 'posts-main',
+    component: () => import('@/views/post/layout.vue'),
+    children: [
+      {path: '', component: () => import('@/views/post/index.vue') },
+      ...routes
+    ]
   },
   {
     path: '/todo',
     component: () => import('@/views/todo.vue')
   },
-  ...routes
 ]
 
 export default baseRouter

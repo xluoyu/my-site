@@ -16,6 +16,7 @@
     width: 100vw;
     height: 100vh;
     object-fit: cover;
+    filter: blur(1px);
   }
 }
 </style>

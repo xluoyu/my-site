@@ -6,7 +6,6 @@ import 'virtual:windi.css'
 import './style/base.less'
 
 const app = createApp(App)
-
 app.use(router)
 app.use(createPinia())
 app.mount('#app')

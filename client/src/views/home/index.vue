@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <TopBar />
     <CurTime />
     <!-- <Search /> -->
     <GridSpace />
@@ -14,7 +13,6 @@
   // import Search from './components/Search.vue'
   import GridSpace from './components/GridSpace.vue'
   import AppLayout from './components/AppLayout.vue'
-  import TopBar from './components/TopBar.vue'
   import Hitokoto from './components/Hitokoto.vue'
 
 </script>
