@@ -13,9 +13,9 @@
 
 <script setup lang="ts">
 const router = useRouter()
-const routes = router.getRoutes()
-
-const posts: any = routes.filter(e => e.path.includes('/posts/')).map((e) => {
+const postsRoutes = router.getRoutes().filter(e => e.path.includes('/posts/'))
+console.log(postsRoutes)
+const posts: any = postsRoutes.map((e) => {
   const frontmatter = typeof e.meta.frontmatter === 'object' ? e.meta.frontmatter : {}
   return {
     path: e.path,

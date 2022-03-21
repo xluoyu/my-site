@@ -12,7 +12,7 @@
         :key="item.label"
         :to="item.url"
         class="tabbar-item"
-        :class="{ 'active': route.path === item.url }"
+        :class="{ 'active': matchedPaths.includes(item.url) }"
       >
         <el-icon size="18px">
           <component
@@ -47,6 +47,9 @@ const pageList = [
 ]
 
 const route = useRoute()
+const matchedPaths = computed(() => {
+  return route.matched.map(e => e.path)
+})
 </script>
 
 <style lang="less" scoped>
