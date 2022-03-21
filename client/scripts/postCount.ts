@@ -12,18 +12,20 @@ const main = () => {
   mdList.forEach((name) => {
     const file = fs.readFileSync(path.join(postRoot, name))
     const { data } = matter(file)
-    if (data.tags && data.tags.length) {
-      data.tags.forEach((tag) => {
-        if (res[tag]) {
-          res[tag] += 1
-        }
-        else {
-          res[tag] = 1
-        }
-      })
+    if (!data.tags) return
+    if (typeof data.tags == 'string') {
+      data.tags = [data.tags]
     }
+    data.tags.forEach((tag) => {
+      if (res[tag]) {
+        res[tag] += 1
+      }
+      else {
+        res[tag] = 1
+      }
+    })
   })
-
+  console.log('已生成标签统计: ', res)
   fs.writeFileSync(path.join(postRoot, 'tags.json'), JSON.stringify(res))
 }
 

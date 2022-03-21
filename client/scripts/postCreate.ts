@@ -26,7 +26,11 @@ const promptList = [
 ]
 
 inquirer.prompt(promptList).then((answers) => {
-  console.log(answers)
+  const filePath = path.resolve(__dirname, `../src/posts/${answers.name}.md`)
+  if (fs.existsSync(filePath)) {
+    console.log(filePath, '文件已存在')
+    return
+  }
 
   const str = `---
 title: ${answers.name}
@@ -36,7 +40,7 @@ tags: ${answers.tags}
 online: false
 ---`
 
-  fs.writeFileSync(path.resolve(__dirname, `../src/posts/${answers.name}.md`), str)
+  fs.writeFileSync(filePath, str)
 
   console.log('创建成功')
 })
