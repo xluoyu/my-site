@@ -15,7 +15,8 @@ export const addScript = (url: string, cb?: () => void): void => {
   const s = document.createElement('script')
   s.type = 'text/javascript'
   s.src = url
-  document.body.appendChild(s)
-  if (cb)
+  if (cb) {
     s.onload = cb
+  }
+  document.body.appendChild(s)
 }
