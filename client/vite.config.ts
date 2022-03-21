@@ -57,6 +57,7 @@ export default defineConfig({
       ],
       extensions: ['vue', 'md'],
       extendRoute(route) {
+        console.log(route)
         const path = resolve(__dirname, route.component.slice(1))
 
         if (!path.includes('projects.md')) {
