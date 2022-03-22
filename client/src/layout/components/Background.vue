@@ -22,4 +22,7 @@
     filter: blur(1px);
   }
 }
+.dark .container-bg img{
+  filter: blur(2px) brightness(70%);
+}
 </style>

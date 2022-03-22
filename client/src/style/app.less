@@ -22,14 +22,17 @@
 .appLayout{
   --appLayout-height: 80vh;
   resize: both;
-  overflow:auto;
+  // overflow:auto;
   min-width: 400px;
-  max-height: var(--appLayout-height);
+  height: var(--appLayout-height);
   border-radius: var(--border-radius) !important;
-  transition: all .3s;
   transform-origin: center top;
+  background: var(--theme-bg) !important;
+
   &.is-fullscreen{
     --appLayout-height: 100vh;
+    height: 100vh !important;
+    width: 100vw !important;
   }
   .el-dialog__header{
     display: none;
@@ -46,9 +49,11 @@
     position: sticky;
     top: 0px;
     right: 0px;
+    z-index: 2;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: var(--theme-bg) !important;
   }
   .action-btn{
     width:  34px;

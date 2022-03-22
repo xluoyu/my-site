@@ -60,9 +60,9 @@ const matchedPaths = computed(() => {
   z-index: 5;
   // width:var(--aside-width);
   height:100%;
-  background: rgba(15, 15, 15, .4);
+  background: rgba(48, 48, 48, .7);
   color: #ccc;
-  backdrop-filter: blur(4px);
+  // backdrop-filter: blur(4px);
   .logo{
     padding: 40px 0;
     img{

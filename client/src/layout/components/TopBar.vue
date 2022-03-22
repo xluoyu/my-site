@@ -4,19 +4,30 @@
     <div class="align-center">
       <MiniAppSpace v-if="route.name == 'home'" />
     </div>
-    <div class="align-center">
-      <div class="align-center weather">
-        <div id="he-plugin-simple" />
-      </div>
+    <div class="align-center text-$theme-color text-lg ">
+      <el-icon
+        class="cursor-pointer mx-4"
+        @click="toggleDark()"
+      >
+        <Moon v-if="isDark" />
+        <Sunny v-else />
+      </el-icon>
+      <div id="he-plugin-simple" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { Moon, Sunny } from '@element-plus/icons-vue'
+import { storeToRefs } from 'pinia'
 import { addScript } from '@/utils'
 import MiniAppSpace from '@/views/home/components/MiniAppSpace.vue'
-
+import { useSettingStore } from '@/store/setting'
 const route = useRoute()
+
+const setting = useSettingStore()
+const { toggleDark } = setting
+const { isDark } = storeToRefs(setting)
 
 onMounted(() => {
   window.WIDGET = {
@@ -47,12 +58,7 @@ onMounted(() => {
 
 <style lang="less" scoped>
 .topbar{
-  // position: fixed;
-  // top: 0;
-  // left: var(--aside-width);
-  // z-index: 2;
-  background: rgba(255,255,255,.4);
-  // width: calc(100vw - var(--aside-width));
+  background: rgba(255,255,255,.6);
   box-sizing: border-box;
   margin-left: var(--aside-width);
   height: var(--topbar-height);
@@ -60,6 +66,9 @@ onMounted(() => {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0 1px 0 rgba(255,255,255,.4);
+  z-index: 20;
+}
+.dark .topbar{
+  background: rgba(36, 36, 36, 0.6);
 }
 </style>

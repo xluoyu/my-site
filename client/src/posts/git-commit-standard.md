@@ -8,9 +8,12 @@ online: false
 
 ## type
 
+```js
+Git
+```
 feat：新功能（feature）。
 
-fix/to：修复bug，可以是QA发现的BUG，也可以是研发自己发现的BUG。
+fix/to：修复bug，可以是QA发现的BUG，也可以是自己发现的BUG。
 
 fix：产生diff并自动修复此问题。适合于一次提交直接修复问题
 

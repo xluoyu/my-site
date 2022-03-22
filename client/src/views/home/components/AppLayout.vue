@@ -10,7 +10,7 @@
     :show-close="false"
     draggable
     :fullscreen="isFullscreen"
-    custom-class="appLayout scrollbar-color"
+    custom-class="appLayout"
   >
     <div class="action-bar">
       <div class="flex items-center">
@@ -70,7 +70,7 @@
       </div>
     </div>
 
-    <div class="appLayout-container">
+    <el-scrollbar wrap-class="appLayout-container">
       <template v-if="curApp?.openType === IOpenType.Component">
         <component :is="curApp.component" />
       </template>
@@ -81,7 +81,7 @@
           class="w-full h-full"
         />
       </template>
-    </div>
+    </el-scrollbar>
   </el-dialog>
 </template>
 

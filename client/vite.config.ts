@@ -11,6 +11,7 @@ import Markdown from 'vite-plugin-md'
 import Pages from 'vite-plugin-pages'
 import fs from 'fs-extra'
 import matter from 'gray-matter'
+import Prism from 'markdown-it-prism'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -36,6 +37,10 @@ export default defineConfig({
     }),
     Markdown({
       wrapperComponent: 'post',
+      wrapperClasses: 'markdown-body',
+      markdownItSetup(md) {
+        md.use(Prism)
+      },
     }),
     AutoImport({
       resolvers: [ElementPlusResolver()],
@@ -57,7 +62,6 @@ export default defineConfig({
       ],
       extensions: ['vue', 'md'],
       extendRoute(route) {
-        console.log(route)
         const path = resolve(__dirname, route.component.slice(1))
 
         if (!path.includes('projects.md')) {

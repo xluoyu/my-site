@@ -1,16 +1,19 @@
 <template>
-  <div class="md:container mx-auto flex justify-center py-8">
-    <div class="flex-grow bg-light-50 mr-8">
-      <router-view />
+  <div class="md:container mx-auto flex justify-center py-8 postContainer">
+    <div class="flex-grow mr-14 box">
+      <el-scrollbar>
+        <router-view />
+      </el-scrollbar>
     </div>
-    <aside class="w-1/7 h-center bg-light-50">
+
+    <div class="w-1/5 h-center box">
       <div
         v-for="item in tags"
         :key="item.label"
       >
         {{ item.label }} ({{ item.count }})
       </div>
-    </aside>
+    </div>
   </div>
 </template>
 
@@ -25,6 +28,21 @@ const tags = Object.keys(tagsJSON).map((key) => {
 })
 </script>
 
-<style scoped>
+<style lang="less">
+.postContainer {
+  height: calc(100% - var(--topbar-height));
+  --post-bg: rgba(255, 255, 255, .9);
 
+  .box{
+    background: var(--post-bg);
+    backdrop-filter: blur(4px);
+    border-radius: var(--border-radius);
+  }
+}
+.dark .postContainer {
+  --post-bg: rgba(24, 24, 24, 0.9);
+}
+.h-center{
+  height: fit-content;
+}
 </style>
