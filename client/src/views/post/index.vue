@@ -1,20 +1,20 @@
 <template>
   <div>
-    <div
+    <router-link
       v-for="item in posts"
       :key="item.path"
+      :to="item.path"
     >
-      <router-link :to="item.path">
-        {{ item.title || '' }}
-      </router-link>
-    </div>
+      <h2>{{ item.title }}</h2>
+
+      <time>{{ item.createTime }}</time>
+    </router-link>
   </div>
 </template>
 
 <script setup lang="ts">
 const router = useRouter()
 const postsRoutes = router.getRoutes().filter(e => e.path.includes('/posts/'))
-console.log(postsRoutes)
 const posts: any = postsRoutes.map((e) => {
   const frontmatter = typeof e.meta.frontmatter === 'object' ? e.meta.frontmatter : {}
   return {
@@ -22,6 +22,7 @@ const posts: any = postsRoutes.map((e) => {
     ...frontmatter,
   }
 })
+console.log(posts)
 
 </script>
 

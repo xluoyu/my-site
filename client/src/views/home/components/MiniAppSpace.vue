@@ -40,20 +40,21 @@ const mouseoutItem = () => {
 <style lang="less" scoped>
 .miniAppSpace {
   display: flex;
+  justify-content:center;
   max-width: 50vw;
   .app {
     cursor: pointer;
-    margin: 0 8px;
+    padding: 0 8px;
     transition: all 0.2s;
     img {
       border-radius: 4px;
     }
     &.status1 {
-      margin: 0 16px;
+      margin: 0 8px;
       transform: scale(3) translateY(6px);
     }
     &.status2 {
-      margin: 0 12px;
+      margin: 0 6px;
       transform: scale(2) translateY(4px);
     }
   }

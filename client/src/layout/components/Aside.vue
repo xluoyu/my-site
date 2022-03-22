@@ -60,8 +60,8 @@ const matchedPaths = computed(() => {
   z-index: 5;
   // width:var(--aside-width);
   height:100%;
-  background: rgba(48, 48, 48, .7);
-  color: #ccc;
+  background:rgba(var(--aside-bg), .6) ;
+  color: rgb(var(--aside-color), .6);
   // backdrop-filter: blur(4px);
   .logo{
     padding: 40px 0;
@@ -74,7 +74,7 @@ const matchedPaths = computed(() => {
     .tabbar-item {
       display: block;
       text-align: center;
-      color: #ccc;
+      color: inherit;
       cursor: pointer;
       font-size: 14px;
       padding: 15px 0;
