@@ -1,28 +1,34 @@
 <template>
   <div class="p-4">
-    <router-link
-      v-for="item in posts"
-      :key="item.path"
-      :to="item.path"
-      class="post-item"
-    >
-      <div>
-        <h2 class="text-base mb-2 mr-2 inline">
-          {{ item.title }}
-        </h2>
-        <el-tag
-          v-for="tag in item.tags"
-          :key="tag.label"
-          class="mx-1"
-          :type="tag.type"
-          :effect="isDark ? 'dark' : 'light'"
-          size="small"
-        >
-          {{ tag.label }}
-        </el-tag>
-      </div>
-      <time class="text-xs">{{ item.createTime }}</time>
-    </router-link>
+    <template v-if="posts.length">
+      <router-link
+        v-for="item in posts"
+        :key="item.path"
+        :to="item.path"
+        class="post-item"
+      >
+        <div>
+          <h2 class="text-base mb-2 mr-2 inline">
+            {{ item.title }}
+          </h2>
+          <el-tag
+            v-for="tag in item.tags"
+            :key="tag.label"
+            class="mx-1"
+            :type="tag.type"
+            :effect="isDark ? 'dark' : 'light'"
+            size="small"
+          >
+            {{ tag.label }}
+          </el-tag>
+        </div>
+        <time class="text-xs">{{ item.createTime }}</time>
+      </router-link>
+    </template>
+    <el-empty
+      v-else
+      description="没有找到哟！"
+    />
   </div>
 </template>
 

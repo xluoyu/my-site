@@ -1,7 +1,7 @@
 <template>
   <el-scrollbar view-class="py-8 ">
-    <div class="md:container mx-auto flex justify-center postContainer relative h-full">
-      <div class="flex-grow mr-14 min-h-full box">
+    <div class="md:container px-$aside-width mx-auto flex justify-center postContainer relative h-full">
+      <div class="max-w-screen-md flex-grow mr-4 min-h-full box">
         <router-view />
       </div>
 
