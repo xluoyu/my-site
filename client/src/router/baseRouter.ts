@@ -13,10 +13,9 @@ const baseRouter: RouteRecordRaw[] = [
   },
   {
     path: '/posts',
-    name: 'posts-main',
     component: () => import('@/views/post/layout.vue'),
     children: [
-      { path: '', component: () => import('@/views/post/index.vue') },
+      { path: '', name: 'posts', component: () => import('@/views/post/index.vue') },
       ...routes,
     ],
   },

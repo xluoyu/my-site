@@ -1,17 +1,24 @@
 <template>
   <el-scrollbar view-class="py-8 ">
-    <div class="md:container mx-auto flex justify-center postContainer h-full">
+    <div class="md:container mx-auto flex justify-center postContainer relative h-full">
       <div class="flex-grow mr-14 min-h-full box">
         <router-view />
       </div>
 
-      <div class="w-1/5 h-center box">
-        <div
-          v-for="item in tags"
-          :key="item.label"
-        >
-          {{ item.label }} ({{ item.count }})
-        </div>
+      <div class="w-1/5 h-center box sticky top-8 p-4">
+        <h3 class="mb-2">
+          文章标签：
+        </h3>
+        <el-space wrap>
+          <el-tag
+            v-for="item in tags"
+            :key="item.label"
+            class="cursor-pointer "
+            @click="handleTagClick(item.label)"
+          >
+            {{ item.label }} ({{ item.count }})
+          </el-tag>
+        </el-space>
       </div>
     </div>
   </el-scrollbar>
@@ -26,6 +33,17 @@ const tags = Object.keys(tagsJSON).map((key) => {
     count: tagsJSON[key],
   }
 })
+
+const router = useRouter()
+
+const handleTagClick = (label: string) => {
+  router.push({
+    name: 'posts',
+    query: {
+      tag: label,
+    },
+  })
+}
 </script>
 
 <style lang="less">
