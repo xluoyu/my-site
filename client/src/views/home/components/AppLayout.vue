@@ -70,7 +70,7 @@
       </div>
     </div>
 
-    <el-scrollbar wrap-class="appLayout-container">
+    <el-scrollbar view-class="appLayout-container">
       <template v-if="curApp?.openType === IOpenType.Component">
         <component :is="curApp.component" />
       </template>

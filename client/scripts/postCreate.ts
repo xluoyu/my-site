@@ -32,6 +32,12 @@ inquirer.prompt(promptList).then((answers) => {
     return
   }
 
+  if (answers.tags) {
+    answers.tags = Array.isArray(answers.tags) ? answers.tags : [answers.tags]
+  } else {
+    answers.tags = []
+  }
+
   const str = `---
 title: ${answers.name}
 author: ${answers.isSelf ? packages.author : 'unknown\nsource:'}
