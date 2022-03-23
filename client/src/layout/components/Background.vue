@@ -21,6 +21,7 @@ const loadImg = () => {
   document.documentElement.style.setProperty('--aside-bg', color ? '218,223,229' : '48, 48, 48')
   document.documentElement.style.setProperty('--aside-color', color ? '34,34,34' : '233,233,233')
 }
+
 </script>
 
 <style lang="less" scoped>

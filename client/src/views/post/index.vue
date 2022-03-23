@@ -22,6 +22,7 @@ const posts: any = postsRoutes.map((e) => {
     ...frontmatter,
   }
 })
+
 console.log(posts)
 
 </script>

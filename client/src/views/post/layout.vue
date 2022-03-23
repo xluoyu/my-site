@@ -1,20 +1,20 @@
 <template>
-  <div class="md:container mx-auto flex justify-center py-8 postContainer">
-    <div class="flex-grow mr-14 box">
-      <el-scrollbar>
+  <el-scrollbar view-class="py-8 ">
+    <div class="md:container mx-auto flex justify-center postContainer h-full">
+      <div class="flex-grow mr-14 min-h-full box">
         <router-view />
-      </el-scrollbar>
-    </div>
+      </div>
 
-    <div class="w-1/5 h-center box">
-      <div
-        v-for="item in tags"
-        :key="item.label"
-      >
-        {{ item.label }} ({{ item.count }})
+      <div class="w-1/5 h-center box">
+        <div
+          v-for="item in tags"
+          :key="item.label"
+        >
+          {{ item.label }} ({{ item.count }})
+        </div>
       </div>
     </div>
-  </div>
+  </el-scrollbar>
 </template>
 
 <script setup lang="ts">
@@ -30,10 +30,12 @@ const tags = Object.keys(tagsJSON).map((key) => {
 
 <style lang="less">
 .postContainer {
-  height: calc(100% - var(--topbar-height));
+  // height: calc(100vh - var(--topbar-height));
+  // overflow: auto;
   --post-bg: rgba(255, 255, 255, .9);
 
   .box{
+    height: fit-content;
     background: var(--post-bg);
     backdrop-filter: blur(4px);
     border-radius: var(--border-radius);

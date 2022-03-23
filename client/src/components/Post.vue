@@ -1,5 +1,5 @@
 <template>
-  <div class="px-14 scrollbar-color pb-14 ">
+  <div class="px-14 py-7 ">
     <div class>
       <h3>{{ frontmatter.title }}</h3>
       <h5>{{ frontmatter.author }}</h5>
