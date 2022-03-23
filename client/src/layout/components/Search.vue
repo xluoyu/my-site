@@ -5,7 +5,7 @@
   >
     <el-input
       v-model="input"
-      placeholder="Please input"
+      placeholder="小小的搜一下"
       class="search-input"
       clearable
       @change="search"
@@ -25,14 +25,12 @@ const input = ref('')
 const router = useRouter()
 const search = () => {
   const value = input.value
-  if (value) {
-    router.push({
-      name: 'posts',
-      query: {
-        q: value,
-      },
-    })
-  }
+  router.push({
+    name: 'posts',
+    query: {
+      q: value,
+    },
+  })
 }
 </script>
 

@@ -65,6 +65,10 @@ const posts = computed(() => {
     return allPosts.filter(e => e.tags.some(tag => tag.label === route.query.tag))
   }
 
+  if (route.query.q) {
+    return allPosts.filter(e => e.title.includes(route.query.q))
+  }
+
   return allPosts
 })
 
