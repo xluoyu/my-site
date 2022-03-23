@@ -13,6 +13,7 @@ const baseRouter: RouteRecordRaw[] = [
   },
   {
     path: '/posts',
+    name: 'posts-main',
     component: () => import('@/views/post/layout.vue'),
     children: [
       { path: '', name: 'posts', component: () => import('@/views/post/index.vue') },

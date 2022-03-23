@@ -16,6 +16,8 @@
     "coverage": "vitest run --coverage"
   },
   "dependencies": {
+    "@docsearch/css": "^3.0.0",
+    "@docsearch/js": "3",
     "@element-plus/icons-vue": "^1.0.0",
     "@vueuse/core": "^7.7.1",
     "axios": "^0.26.0",

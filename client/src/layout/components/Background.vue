@@ -2,7 +2,7 @@
   <div class="container-bg">
     <img
       ref="bgRef"
-      src="https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1647705985427-337fc15ff6bc?ixid=MnwxMjA3fDB8MXxyYW5kb218fHx8fHx8fHwxNjQ3OTQxNTk1&ixlib=rb-1.2.1&w=2560&fm=jpg"
+      src="https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1647382529790-b8af005d6031?ixid=MnwxMjA3fDB8MXxyYW5kb218fHx8fHx8fHwxNjQ3OTQxMzcx&ixlib=rb-1.2.1&w=2560&fm=jpg"
       alt=""
       crossOrigin="https://itab.s3.ladydaily.com"
       @load="loadImg"
