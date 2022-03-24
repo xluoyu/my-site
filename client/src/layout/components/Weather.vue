@@ -2,7 +2,7 @@
   <div id="he-plugin-simple" />
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 import { addScript } from '@/utils'
 
 onMounted(() => {

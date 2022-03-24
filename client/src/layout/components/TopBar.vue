@@ -24,7 +24,7 @@ import { storeToRefs } from 'pinia'
 import Weather from './Weather.vue'
 import Search from './Search.vue'
 import MiniAppSpace from '@/views/home/components/MiniAppSpace.vue'
-import { useSettingStore } from '@/store/setting'
+import { useSettingStore } from '@/store/useSetting'
 const route = useRoute()
 const setting = useSettingStore()
 const { toggleDark } = setting

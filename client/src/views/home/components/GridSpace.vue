@@ -1,16 +1,28 @@
 <template>
-  <div class="gridSpace">
-    <App
+  <div
+    ref="gridSpace"
+    class="gridSpace"
+  >
+    <HnadleApp
       v-for="item in AppList"
       :key="item.key"
-      :app="item"
-    />
+    >
+      <App :app="item" />
+    </HnadleApp>
   </div>
 </template>
 
 <script setup lang="ts">
 import App from './App.vue'
+import HnadleApp from './HandleApp.vue'
 import AppList from '@/packages'
+import { useAppDrag } from '@/store/useAppDrag'
+
+const gridSpace = ref()
+onMounted(() => {
+  useAppDrag(gridSpace.value)
+})
+
 </script>
 
 <style lang="less" scoped>

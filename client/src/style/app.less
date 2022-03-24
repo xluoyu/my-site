@@ -4,18 +4,33 @@
   height: var(--app-height);
   text-align: center;
   margin: 0 auto;
-  img{
+  cursor: pointer;
+  &:active{
+    .app-space{
+      transform: scale(.9);
+    }
+  }
+  &:hover{
+    .app-space{
+      box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+    }
+  }
+  .app-space{
     margin: 0 auto;
     width: 60px;
     height: 60px;
     border-radius: 14px;
+    transition: transform .2s, box-shadow .4s;
+    overflow: hidden;
   }
   p{
     line-height: 30px;
     font-size: 14px;
   }
 }
-
+.box-ghost{
+  opacity: .2;
+}
 .el-overlay-dialog {
   overflow: hidden !important;
 }

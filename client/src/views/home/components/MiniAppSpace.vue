@@ -20,8 +20,8 @@
 
 <script setup lang="ts">
 import { storeToRefs } from 'pinia'
-import { useMiniAppListStore } from '@/store/miniAppList'
-import { useAppLayoutStore } from '@/store/appLayout'
+import { useMiniAppListStore } from '@/store/useMiniAppList'
+import { useAppLayoutStore } from '@/store/useAppLayout'
 
 const { openApp } = useAppLayoutStore()
 const miniAppList = useMiniAppListStore()

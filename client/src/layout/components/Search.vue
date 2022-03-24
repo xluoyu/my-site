@@ -5,7 +5,7 @@
   >
     <el-input
       v-model="input"
-      placeholder="小小的搜一下"
+      placeholder="搜一下"
       class="search-input"
       clearable
       @change="search"

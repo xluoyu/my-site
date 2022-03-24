@@ -34,7 +34,7 @@
 
 <script setup lang="ts">
 import { storeToRefs } from 'pinia'
-import { useSettingStore } from '@/store/setting'
+import { useSettingStore } from '@/store/useSetting'
 const router = useRouter()
 const postsRoutes = router.getRoutes().filter(e => e.path.includes('/posts/'))
 const Setting = useSettingStore()

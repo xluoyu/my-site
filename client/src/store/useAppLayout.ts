@@ -1,7 +1,7 @@
 import { useToggle } from '@vueuse/core'
 import { defineStore } from 'pinia'
 import { ElNotification } from 'element-plus'
-import { useMiniAppListStore } from './miniAppList'
+import { useMiniAppListStore } from './useMiniAppList'
 import { IOpenType } from '@/types/app.type'
 import type { IApp } from '@/types/app.type'
 /**

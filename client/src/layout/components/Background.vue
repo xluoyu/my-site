@@ -14,7 +14,7 @@
 <script lang="ts" setup>
 import ColorThief from 'ColorThief'
 import { storeToRefs } from 'pinia'
-import { useSettingStore } from '@/store/setting'
+import { useSettingStore } from '@/store/useSetting'
 const useSetting = useSettingStore()
 const { isDark } = storeToRefs(useSetting)
 const bgRef = ref()
