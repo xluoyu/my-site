@@ -18,11 +18,7 @@ interface _IApp {
   icon?: string // 图标
   key: string
   type: IAppType // 应用类型
-  /**
-   * 占据位置
-   * [宽， 高]
-   */
-  size?: [number, number]
+  size?: 'big' | 'medium' | 'small' // 尺寸
   status?: boolean // 开发状态
   children?: IApp[] // 应用组
 }

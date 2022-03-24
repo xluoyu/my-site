@@ -6,6 +6,7 @@
     <HnadleApp
       v-for="item in AppList"
       :key="item.key"
+      :app="item"
     >
       <App :app="item" />
     </HnadleApp>
@@ -18,9 +19,8 @@ import HnadleApp from './HandleApp.vue'
 import AppList from '@/packages'
 import { useAppDrag } from '@/store/useAppDrag'
 
-const gridSpace = ref()
 onMounted(() => {
-  useAppDrag(gridSpace.value)
+  useAppDrag('.gridSpace')
 })
 
 </script>
