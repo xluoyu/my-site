@@ -9,9 +9,8 @@
 
 <script lang="ts" setup>
 import CurTime from './components/CurTime.vue'
-// import Search from './components/Search.vue'
-import GridSpace from './components/GridSpace.vue'
-import AppLayout from './components/AppLayout.vue'
+import GridSpace from './components/AppSpace/index.vue'
+import AppLayout from './components/AppDialog/index.vue'
 import Hitokoto from './components/Hitokoto.vue'
 
 </script>

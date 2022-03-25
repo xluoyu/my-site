@@ -22,8 +22,8 @@
 import { Moon, Sunny } from '@element-plus/icons-vue'
 import { storeToRefs } from 'pinia'
 import Weather from './Weather.vue'
-import Search from './Search.vue'
-import MiniAppSpace from '@/views/home/components/MiniAppSpace.vue'
+import Search from '@/views/post/components/TopBarSearch.vue'
+import MiniAppSpace from '@/views/home/components/TopBarMiniApp.vue'
 import { useSettingStore } from '@/store/useSetting'
 const route = useRoute()
 const setting = useSettingStore()

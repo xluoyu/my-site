@@ -9,7 +9,7 @@ const appList: IApp[] = [
     key: 'chat',
     type: IAppType.App,
     openType: IOpenType.Component,
-    component: markRaw(defineAsyncComponent(() => import('./music/index.vue')))!,
+    component: markRaw(defineAsyncComponent(() => import('./music/index')))!,
   }, {
     name: 'vueue文档',
     icon: getAssetsImages('/apps/douyu.svg'),
