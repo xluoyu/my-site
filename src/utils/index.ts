@@ -20,3 +20,7 @@ export const addScript = (url: string, cb?: () => void): void => {
   }
   document.body.appendChild(s)
 }
+
+export function getAssetsImages(name) {
+  return new URL(`../assets/${name}`, import.meta.url).href
+}
