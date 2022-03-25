@@ -6,9 +6,9 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "pnpm run pn && vue-tsc --noEmit && vite build",
-    "pc": "esno scripts/postCreate.ts",
-    "pn": "esno scripts/postCount.ts",
+    "build": "npm run pn && vue-tsc --noEmit && vite build",
+    "pc": "node scripts/postCreate.js",
+    "pn": "node scripts/postCount.js",
     "preview": "vite preview",
     "lint": "eslint --ext .js,.vue,.ts src",
     "lint:fix": "npx eslint --ext .js,.vue,.ts src --fix",
