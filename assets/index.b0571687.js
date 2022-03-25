@@ -1,0 +1,1 @@
+import{_ as e}from"./index.8b270194.js";import{e as c,o as r}from"./vendor.202ec5ca.js";const o={},s={class:"h-screen-lg"};function t(n,_){return r(),c("div",s," \u97F3\u4E50\u64AD\u653E\u5668 ")}var i=e(o,[["render",t]]);export{i as default};
