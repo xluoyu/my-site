@@ -1,0 +1,1 @@
+import{_ as t}from"./index.beb0d923.js";import{e,o}from"./vendor.202ec5ca.js";const r={},c={class:"text-light-50 mx-auto my-10 text-4xl"};function s(_,a){return o(),e("div",c," 404\u4E86 ")}var f=t(r,[["render",s]]);export{f as default};
