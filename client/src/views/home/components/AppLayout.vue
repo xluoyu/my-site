@@ -72,7 +72,16 @@
 
     <el-scrollbar view-class="appLayout-container">
       <template v-if="curApp?.openType === IOpenType.Component">
-        <component :is="curApp.component" />
+        <Suspense>
+          <template #default>
+            <component :is="curApp.component" />
+          </template>
+          <template #fallback>
+            <div>
+              Loading...
+            </div>
+          </template>
+        </Suspense>
       </template>
       <template v-if="curApp?.openType === IOpenType.Iframe">
         <iframe

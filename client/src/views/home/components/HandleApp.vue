@@ -9,7 +9,7 @@
 <script setup lang="ts">
 import type { IApp } from '@/types/app.type'
 
-const props = defineProps<{
+defineProps<{
   app: IApp
 }>()
 </script>

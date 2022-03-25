@@ -26,7 +26,7 @@ interface _IApp {
 // 当 openType == 组件时，component 必填
 interface _IApp_Component extends _IApp {
   openType: IOpenType.Component
-  component: DefineComponent<Record<string, never>, Record<string, never>, any>
+  component: DefineComponent<{}, {}, any>
 }
 
 // 当 openType == 其余时，pageUrl 必填

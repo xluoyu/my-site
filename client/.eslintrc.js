@@ -26,6 +26,7 @@ module.exports = {
     'curly': 0,
     '@typescript-eslint/no-non-null-assertion': 0,
     '@typescript-eslint/brace-style': 0,
+    '@typescript-eslint/ban-types': 0,
   },
   overrides: [
     {

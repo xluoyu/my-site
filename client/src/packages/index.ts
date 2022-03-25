@@ -8,7 +8,7 @@ const appList: IApp[] = [
     key: 'chat',
     type: IAppType.App,
     openType: IOpenType.Component,
-    component: markRaw(defineAsyncComponent(() => import('@/packages/music/index.vue'))),
+    component: markRaw(defineAsyncComponent(() => import('./music/index.vue')))!,
   }, {
     name: 'vueue文档',
     icon: '/apps/douyu.svg',
