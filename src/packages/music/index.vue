@@ -1,5 +1,5 @@
 <template>
-  <div class="h-screen-lg">
+  <div class="h-full text-$theme-color">
     音乐播放器
   </div>
 </template>

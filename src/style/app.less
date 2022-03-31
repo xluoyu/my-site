@@ -5,6 +5,7 @@
   text-align: center;
   margin: 0 auto;
   cursor: pointer;
+  user-select: none;
   &:active{
     .app-space{
       transform: scale(.9);
@@ -43,6 +44,7 @@
   border-radius: var(--border-radius) !important;
   transform-origin: center top;
   background: var(--theme-bg) !important;
+  overflow: hidden;
 
   &.is-fullscreen{
     --appLayout-height: 100vh;
@@ -50,7 +52,9 @@
     width: 100vw !important;
   }
   .el-dialog__header{
-    display: none;
+    // display: none;
+    padding: 0;
+    margin: 0;
   }
   .el-dialog__footer{
     display: none;

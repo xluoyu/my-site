@@ -4,9 +4,9 @@ import { getAssetsImages } from '@/utils'
 
 const appList: IApp[] = [
   {
-    name: '音乐聊天室',
+    name: '音乐播放器',
     icon: getAssetsImages('/apps/music163.svg'),
-    key: 'chat',
+    key: 'music',
     type: IAppType.App,
     openType: IOpenType.Component,
     component: markRaw(defineAsyncComponent(() => import('./music/index')))!,

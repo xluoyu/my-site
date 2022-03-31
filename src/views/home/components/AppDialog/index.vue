@@ -12,63 +12,65 @@
     :fullscreen="isFullscreen"
     custom-class="appLayout"
   >
-    <div class="action-bar">
-      <div class="flex items-center">
-        <template v-if="curApp?.openType && curApp.openType !== IOpenType.Component">
+    <template #title>
+      <div class="action-bar">
+        <div class="flex items-center">
+          <template v-if="curApp?.openType && curApp.openType !== IOpenType.Component">
+            <div
+              class="action-btn hover:(bg-cyan-600 text-light-50)"
+              title="访问原网站"
+              @click="openWindow"
+            >
+              <el-icon>
+                <Promotion />
+              </el-icon>
+            </div>
+            <el-button
+              type="text"
+              size="small"
+              @click="openWindow"
+            >
+              {{ curApp?.pageUrl }}
+            </el-button>
+          </template>
+          <div
+            v-else
+            class="text-sm ml-2 text-gray-500"
+          >
+            {{ curApp?.name }}
+          </div>
+        </div>
+        <div class="flex">
           <div
             class="action-btn hover:(bg-cyan-600 text-light-50)"
-            title="访问原网站"
-            @click="openWindow"
+            title="浏览器全屏"
+            @click="isFullscreen = !isFullscreen"
           >
             <el-icon>
-              <Promotion />
+              <FullScreen />
             </el-icon>
           </div>
-          <el-button
-            type="text"
-            size="small"
-            @click="openWindow"
+          <div
+            class="action-btn hover:(bg-gray-400 text-light-50)"
+            title="最小化"
+            @click="minimize"
           >
-            {{ curApp?.pageUrl }}
-          </el-button>
-        </template>
-        <div
-          v-else
-          class="ml-2"
-        >
-          {{ curApp?.name }}
+            <el-icon>
+              <Minus />
+            </el-icon>
+          </div>
+          <div
+            class="action-btn hover:(bg-red-600 text-light-50)"
+            title="关闭"
+            @click="closeApp"
+          >
+            <el-icon>
+              <Close />
+            </el-icon>
+          </div>
         </div>
       </div>
-      <div class="flex">
-        <div
-          class="action-btn hover:(bg-cyan-600 text-light-50)"
-          title="浏览器全屏"
-          @click="isFullscreen = !isFullscreen"
-        >
-          <el-icon>
-            <FullScreen />
-          </el-icon>
-        </div>
-        <div
-          class="action-btn hover:(bg-gray-400 text-light-50)"
-          title="最小化"
-          @click="minimize"
-        >
-          <el-icon>
-            <Minus />
-          </el-icon>
-        </div>
-        <div
-          class="action-btn hover:(bg-red-600 text-light-50)"
-          title="关闭"
-          @click="closeApp"
-        >
-          <el-icon>
-            <Close />
-          </el-icon>
-        </div>
-      </div>
-    </div>
+    </template>
 
     <el-scrollbar view-class="appLayout-container">
       <template v-if="curApp?.openType === IOpenType.Component">
