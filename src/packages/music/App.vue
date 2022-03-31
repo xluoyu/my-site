@@ -1,5 +1,8 @@
 <template>
-  <div class="h-full text-$theme-color flex flex-col">
+  <div
+    id="app-music"
+    class="h-full text-$theme-color flex flex-col"
+  >
     <div class="flex flex-1">
       <Aside />
       <Home />
@@ -15,5 +18,7 @@ import Home from './components/Home.vue'
 </script>
 
 <style scoped>
-
+#app-music{
+  --control-h: 60px;
+}
 </style>
