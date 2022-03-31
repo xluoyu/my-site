@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import Music from '../index.vue'
+import Music from '../App.vue'
 
 describe('music test', () => {
   it('mount component', async() => {

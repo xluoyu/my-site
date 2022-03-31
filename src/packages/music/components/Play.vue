@@ -1,6 +1,6 @@
 <template>
-  <div class="flex-1">
-    这是主页
+  <div>
+    play
   </div>
 </template>
 

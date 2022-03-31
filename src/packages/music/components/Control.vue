@@ -1,6 +1,6 @@
 <template>
-  <div class="h-full text-$theme-color">
-    音乐播放器
+  <div class="h-16 ring-1 ring-opacity-50 ring-gray-500">
+    控制台
   </div>
 </template>
 

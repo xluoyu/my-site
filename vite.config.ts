@@ -19,7 +19,7 @@ export default defineConfig({
     globals: true,
     environment: 'happy-dom',
   },
-  base: '/my-site',
+  base: '/my-site/',
   server: {
     port: 8080,
     proxy: {

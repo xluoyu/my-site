@@ -36,18 +36,17 @@
   overflow: hidden !important;
 }
 .appLayout{
-  --appLayout-height: 80vh;
+  --appLayout-topbar-h: 24px;
   resize: both;
   // overflow:auto;
   min-width: 400px;
-  height: var(--appLayout-height);
+  height: 80vh;
   border-radius: var(--border-radius) !important;
   transform-origin: center top;
   background: var(--theme-bg) !important;
   overflow: hidden;
 
   &.is-fullscreen{
-    --appLayout-height: 100vh;
     height: 100vh !important;
     width: 100vw !important;
   }
@@ -62,6 +61,7 @@
   .el-dialog__body{
     position: relative;
     padding: 0;
+    height: calc(100% - var(--appLayout-topbar-h));
   }
   .action-bar{
     width: 100%;
@@ -76,7 +76,7 @@
   }
   .action-btn{
     width:  34px;
-    height: 24px;
+    height: var(--appLayout-topbar-h);
     text-align: center;
     line-height: 28px;
     transition: all 0.3s;
@@ -84,6 +84,6 @@
   }
   .appLayout-container{
     width: 100%;
-    height: calc(var(--appLayout-height) - 24px);
+    height: 100%;
   }
 }
