@@ -1,1 +1,0 @@
-import{_ as t,c as e,o as c}from"./index.a0744ede.js";const o={},r={class:"text-light-50 mx-auto my-10 text-4xl"};function s(_,a){return c(),e("div",r," 404\u4E86 ")}var l=t(o,[["render",s]]);export{l as default};
