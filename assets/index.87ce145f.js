@@ -1,0 +1,1 @@
+import{_ as e,c,o as t}from"./index.a0744ede.js";const o={},r={class:"h-full text-$theme-color"};function s(_,a){return t(),c("div",r," \u97F3\u4E50\u64AD\u653E\u5668 ")}var l=e(o,[["render",s]]);export{l as default};
