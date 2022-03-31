@@ -21,7 +21,7 @@ defineProps<{
   app: IApp
 }>()
 
-const { openApp } = useAppLayoutStore()
+const { openApp } = useAppLayoutStore
 </script>
 
 <style lang="less" scoped>

@@ -33,12 +33,10 @@
 </template>
 
 <script setup lang="ts">
-import { storeToRefs } from 'pinia'
 import { useSettingStore } from '@/store/useSetting'
 const router = useRouter()
 const postsRoutes = router.getRoutes().filter(e => e.path.includes('/posts/'))
-const Setting = useSettingStore()
-const { isDark } = storeToRefs(Setting)
+const { isDark } = useSettingStore
 const allPosts: any = postsRoutes.map((e) => {
   const frontmatter: any = typeof e.meta.frontmatter === 'object' ? e.meta.frontmatter : {}
   const tags = frontmatter.tags

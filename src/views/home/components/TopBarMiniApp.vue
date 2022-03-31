@@ -19,13 +19,11 @@
 </template>
 
 <script setup lang="ts">
-import { storeToRefs } from 'pinia'
 import { useMiniAppListStore } from '@/store/useMiniAppList'
 import { useAppLayoutStore } from '@/store/useAppLayout'
 
-const { openApp } = useAppLayoutStore()
-const miniAppList = useMiniAppListStore()
-const { list } = storeToRefs(miniAppList)
+const { openApp } = useAppLayoutStore
+const { list } = useMiniAppListStore
 
 const outCount = ref<number | null>(null)
 

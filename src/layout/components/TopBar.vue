@@ -20,15 +20,12 @@
 
 <script setup lang="ts">
 import { Moon, Sunny } from '@element-plus/icons-vue'
-import { storeToRefs } from 'pinia'
 import Weather from './Weather.vue'
 import Search from '@/views/post/components/TopBarSearch.vue'
 import MiniAppSpace from '@/views/home/components/TopBarMiniApp.vue'
 import { useSettingStore } from '@/store/useSetting'
 const route = useRoute()
-const setting = useSettingStore()
-const { toggleDark } = setting
-const { isDark } = storeToRefs(setting)
+const { isDark, toggleDark } = useSettingStore
 
 </script>
 

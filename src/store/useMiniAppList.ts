@@ -1,9 +1,8 @@
-import { defineStore } from 'pinia'
 import type { IApp } from '@/types/app.type'
 import AppList from '@/packages'
 
 // 最小化的App
-export const useMiniAppListStore = defineStore('counter', () => {
+export const useMiniAppListStore = (() => {
   const list = ref<IApp[]>([...AppList])
 
   const addApp = (app: IApp) => {
@@ -21,4 +20,4 @@ export const useMiniAppListStore = defineStore('counter', () => {
     addApp,
     removeApp,
   }
-})
+})()

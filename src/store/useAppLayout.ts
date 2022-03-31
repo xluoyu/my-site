@@ -1,5 +1,4 @@
 import { useToggle } from '@vueuse/core'
-import { defineStore } from 'pinia'
 import { ElNotification } from 'element-plus'
 import { useMiniAppListStore } from './useMiniAppList'
 import { IOpenType } from '@/types/app.type'
@@ -7,10 +6,10 @@ import type { IApp } from '@/types/app.type'
 /**
  * app展示模块
  */
-export const useAppLayoutStore = defineStore('appLayout', () => {
+export const useAppLayoutStore = (() => {
   const [showAppLayout, toggleAppLayout] = useToggle(false)
   const [isFullscreen, toggleIsFullscreen] = useToggle(false)
-  const { addApp, removeApp } = useMiniAppListStore()
+  const { addApp, removeApp } = useMiniAppListStore
 
   const curApp = ref<IApp | null>()
 
@@ -65,4 +64,4 @@ export const useAppLayoutStore = defineStore('appLayout', () => {
     isFullscreen,
     toggleIsFullscreen,
   }
-})
+})()

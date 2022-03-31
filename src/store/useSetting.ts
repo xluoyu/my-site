@@ -1,7 +1,6 @@
-import { defineStore } from 'pinia'
 import { useDark, useToggle } from '@vueuse/core'
 
-export const useSettingStore = defineStore('setting', () => {
+export const useSettingStore = (() => {
   // 界面主题
   const isDark = useDark()
   const toggleDark = useToggle(isDark)
@@ -10,4 +9,4 @@ export const useSettingStore = defineStore('setting', () => {
     isDark,
     toggleDark,
   }
-})
+})()
