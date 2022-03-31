@@ -14,7 +14,7 @@ const { appName } = route.params
 
 const curApp = appList.find(e => e.key === appName)
 
-const { openApp } = useAppLayoutStore()
+const { openApp } = useAppLayoutStore
 if (curApp) {
   openApp(curApp)
 } else {
