@@ -99,11 +99,11 @@
 <script setup lang="ts">
 import { Close, FullScreen, Minus, Promotion } from '@element-plus/icons-vue'
 import { storeToRefs } from 'pinia'
-import { useAppLayout } from '@/store'
+import { useAppLayoutStore } from '@/store/useAppLayout'
 import { IOpenType } from '@/types/app.type'
-
-const { showAppLayout, isFullscreen, curApp } = storeToRefs(useAppLayout)
+const useAppLayout = useAppLayoutStore()
 const { closeApp, minimize, openWindow } = useAppLayout
+const { showAppLayout, isFullscreen, curApp } = storeToRefs(useAppLayout)
 </script>
 
 <style lang="less" scoped>
