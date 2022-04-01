@@ -1,7 +1,6 @@
 <template>
   <el-dialog
     v-model="showAppLayout"
-    title="Tips"
     width="70%"
     top="10vh"
     :close-on-press-escape="false"
@@ -76,7 +75,9 @@
       <template v-if="curApp?.openType === IOpenType.Component">
         <Suspense>
           <template #default>
-            <component :is="curApp.component" />
+            <component
+              :is="curApp.component"
+            />
           </template>
           <template #fallback>
             <div>
@@ -101,6 +102,31 @@ import { Close, FullScreen, Minus, Promotion } from '@element-plus/icons-vue'
 import { useAppLayoutStore } from '@/store/useAppLayout'
 import { IOpenType } from '@/types/app.type'
 const { closeApp, minimize, openWindow, showAppLayout, isFullscreen, curApp } = useAppLayoutStore
+const dialogWidth = ref(document.documentElement.clientWidth * 0.7)
+provide('appLayout', {
+  dialogWidth,
+})
+
+onMounted(() => {
+  let dialogEl: Element | null = null
+  const resizeObserver = new ResizeObserver((entries) => {
+    for (const entry of entries) {
+      dialogWidth.value = entry.contentRect.width
+    }
+  })
+
+  watch(showAppLayout, (val) => {
+    if (val) {
+      nextTick(() => {
+        dialogEl = document.querySelector('.appLayout')!
+        resizeObserver.observe(dialogEl)
+      })
+    } else {
+      resizeObserver.disconnect()
+    }
+  }, { immediate: true })
+})
+
 </script>
 
 <style lang="less" scoped>
