@@ -1,10 +1,6 @@
 <template>
-  <div class="flex-1">
-    <el-scrollbar>
-      <Search />
-      <Recommend />
-    </el-scrollbar>
-  </div>
+  <Search />
+  <Recommend />
 </template>
 
 <script setup lang="ts">

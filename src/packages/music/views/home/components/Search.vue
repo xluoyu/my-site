@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full sticky top-0 bg-$theme-bg pb-4">
+  <div class="w-full sticky top-0 theme-bg pb-4">
     <el-input
       placeholder="搜点什么"
       class="input-transparent search"

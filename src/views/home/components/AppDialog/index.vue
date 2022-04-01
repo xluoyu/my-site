@@ -9,10 +9,10 @@
     :show-close="false"
     draggable
     :fullscreen="isFullscreen"
-    custom-class="appLayout"
+    custom-class="appLayout theme-bg"
   >
     <template #title>
-      <div class="action-bar">
+      <div class="action-bar theme-bg">
         <div class="flex items-center">
           <template v-if="curApp?.openType && curApp.openType !== IOpenType.Component && curApp.openType !== IOpenType.Router">
             <div
@@ -71,7 +71,7 @@
       </div>
     </template>
 
-    <el-scrollbar view-class="appLayout-container">
+    <el-scrollbar view-class="appLayout-container theme-bg">
       <template v-if="curApp?.openType === IOpenType.Component">
         <Suspense>
           <template #default>

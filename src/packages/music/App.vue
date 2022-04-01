@@ -1,12 +1,18 @@
 <template>
   <div
     id="app-music"
-    class="h-full text-$theme-color flex flex-col"
+    class="h-full text-$theme-color  flex flex-col"
   >
     <div class="flex h-[calc(100%-var(--control-h))]">
       <Aside />
       <!-- <Home /> -->
-      <router-view />
+      <div
+        class="mb-1px flex-1"
+      >
+        <el-scrollbar>
+          <router-view />
+        </el-scrollbar>
+      </div>
     </div>
     <Control />
   </div>

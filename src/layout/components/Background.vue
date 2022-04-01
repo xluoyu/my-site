@@ -47,6 +47,7 @@ watchEffect(() => {
     height: 100vh;
     object-fit: cover;
     filter: blur(1px);
+    transition: filter .2s;
   }
 }
 .dark .container-bg img{

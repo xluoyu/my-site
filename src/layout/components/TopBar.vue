@@ -41,6 +41,7 @@ const { isDark, toggleDark } = useSettingStore
   justify-content: space-between;
   z-index: 20;
   position: relative;
+  transition: background 0.2s;
 }
 .dark .topbar{
   background: rgba(36, 36, 36, 0.6);

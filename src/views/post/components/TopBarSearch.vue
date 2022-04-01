@@ -6,7 +6,7 @@
     <el-input
       v-model="input"
       placeholder="搜一下"
-      class="search-input"
+      class="search-input input-transparent"
       clearable
       @change="search"
     >
@@ -36,13 +36,10 @@ const search = () => {
 
 <style lang="less" scoped>
 .search-input{
-  width: 40%;
+  width: 200px;
   min-width: 200px;
+
   ::v-deep(.el-input__inner) {
-    color: var(--theme-color);
-    background: transparent;
-    box-shadow: none;
-    border-radius: 0;
     text-align: center;
     height: calc(var(--topbar-height) - 2px);
     line-height: calc(var(--topbar-height) - 2px);

@@ -58,11 +58,9 @@ const matchedPaths = computed(() => {
   left: 0;
   top: 0;
   z-index: 5;
-  // width:var(--aside-width);
   height:100%;
   background:rgba(var(--aside-bg), .6) ;
-  color: rgb(var(--aside-color), .6);
-  // backdrop-filter: blur(4px);
+  transition: background 0.2s;
   .logo{
     padding: 40px 0;
     img{

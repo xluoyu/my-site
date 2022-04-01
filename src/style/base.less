@@ -19,9 +19,7 @@ del,ins,u,s,a,a:hover{text-decoration:none;}
 textarea{
   font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
 }
-div{
-  transition: background .2s;
-}
+
 img{display:block;pointer-events: none;}
 body {
   height: 100%;
@@ -67,4 +65,12 @@ body {
   background: transparent;
   box-shadow: none;
   border-radius: 0;
+  &::placeholder{
+    color: #929292;
+  }
+}
+
+.theme-bg{
+  background: var(--theme-bg) !important;
+  transition: background .2s;
 }
