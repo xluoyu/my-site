@@ -3,7 +3,7 @@
     id="app-music"
     class="h-full text-$theme-color flex flex-col"
   >
-    <div class="flex flex-1">
+    <div class="flex h-[calc(100%-var(--control-h))]">
       <Aside />
       <Home />
     </div>

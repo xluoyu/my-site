@@ -1,11 +1,13 @@
 <template>
   <div class="flex-1">
-    这是主页
+    <el-scrollbar>
+      <Recommend />
+    </el-scrollbar>
   </div>
 </template>
 
 <script setup lang="ts">
-
+import Recommend from './Recommend.vue'
 </script>
 
 <style scoped>

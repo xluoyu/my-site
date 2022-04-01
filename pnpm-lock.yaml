@@ -5425,7 +5425,7 @@ packages:
     dev: true
 
   github.com/lokesh/quantize/f572abd2646b5944852535c8a26fdb958a5d7c4b:
-    resolution: {commit: f572abd2646b5944852535c8a26fdb958a5d7c4b, repo: git+ssh://git@github.com/lokesh/quantize.git, type: git}
+    resolution: {tarball: https://codeload.github.com/lokesh/quantize/tar.gz/f572abd2646b5944852535c8a26fdb958a5d7c4b}
     name: quantize
     version: 1.2.0
     dev: false

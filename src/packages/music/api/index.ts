@@ -6,3 +6,9 @@ export function Search(params) {
     params,
   })
 }
+
+export function GetPlayList() {
+  return Get({
+    url: '/music/getPlaylist',
+  })
+}
