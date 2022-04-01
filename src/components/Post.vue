@@ -26,7 +26,6 @@
 <script setup lang="ts">
 const route = useRoute()
 const frontmatter: any = route.meta.frontmatter
-console.log(route)
 </script>
 
 <style scoped>

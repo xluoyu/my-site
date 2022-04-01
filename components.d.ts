@@ -10,7 +10,6 @@ declare module 'vue' {
     ElInput: typeof import('element-plus/es')['ElInput']
     ElScrollbar: typeof import('element-plus/es')['ElScrollbar']
     Post: typeof import('./src/components/Post.vue')['default']
-    PostsList: typeof import('./src/components/PostsList.vue')['default']
   }
 }
 
