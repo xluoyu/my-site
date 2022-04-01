@@ -1,1 +1,0 @@
-import{d as s,l as r,c as n,k as u,au as c,f as m,o as i}from"./index.fd433193.js";import{_ as f}from"./index.21d34ce4.js";import"./el-scrollbar.75c2cbe2.js";const B=s({setup(l){const o=c(),{appName:t}=o.params,e=r.find(a=>a.key===t),{openApp:p}=m;return e?p(e):alert("\u672A\u627E\u5230\u6D4B\u8BD5app"),(a,_)=>(i(),n("div",null,[u(f)]))}});export{B as default};
