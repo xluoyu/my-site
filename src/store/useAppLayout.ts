@@ -1,6 +1,7 @@
 import { useToggle } from '@vueuse/core'
 import { ElNotification } from 'element-plus'
 import { useMiniAppListStore } from './useMiniAppList'
+import router from '@/router'
 import { IOpenType } from '@/types/app.type'
 import type { IApp } from '@/types/app.type'
 /**
@@ -14,7 +15,7 @@ export const useAppLayoutStore = (() => {
   const curApp = ref<IApp | null>()
 
   const openWindow = () => {
-    if (curApp.value?.openType === IOpenType.Component) return
+    if (curApp.value?.openType === IOpenType.Component || curApp.value?.openType === IOpenType.Router) return
     if (!curApp.value?.pageUrl) {
       ElNotification({
         title: '错误提示',
@@ -26,6 +27,30 @@ export const useAppLayoutStore = (() => {
     window.open(curApp.value.pageUrl)
   }
 
+  /**
+   * 加载app中配置的路由
+   * 默认主路由为 app 的 key
+   * @param app
+   */
+  const loadAppRoutes = async(app: IApp) => {
+    if (app.openType === IOpenType.Router) {
+      const routes = await app.router().then((res) => {
+        return res.default
+      })
+      routes.forEach((route) => {
+        router.addRoute('home', route)
+      })
+      nextTick(() => {
+        router.push(app.key)
+      })
+    }
+  }
+
+  const removeRoute = (app: IApp) => {
+    router.removeRoute(app.key)
+    router.push('home')
+  }
+
   // 打开App
   const openApp = (app: IApp) => {
     switch (app.openType) {
@@ -34,6 +59,11 @@ export const useAppLayoutStore = (() => {
       case IOpenType.Qiankun:
         toggleAppLayout()
         curApp.value = app
+        break
+      case IOpenType.Router:
+        toggleAppLayout()
+        curApp.value = app
+        loadAppRoutes(app)
         break
       default:
         openWindow()
@@ -45,6 +75,9 @@ export const useAppLayoutStore = (() => {
   const closeApp = () => {
     removeApp(curApp.value!.key)
     toggleAppLayout()
+    if (curApp.value?.openType === IOpenType.Router) {
+      removeRoute(curApp.value)
+    }
     curApp.value = null
   }
 

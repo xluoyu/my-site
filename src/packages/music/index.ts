@@ -1,3 +1,6 @@
-import Music from './App.vue'
+import router from './router'
 
-export default Music
+export default {
+  router,
+  baseRoute: 'music',
+}

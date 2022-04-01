@@ -6,10 +6,11 @@ const baseRouter: RouteRecordRaw[] = [
     path: '/',
     name: 'home',
     component: () => import('@/views/home/index.vue'),
+    children: [],
   },
   {
     path: '/:pathMatch(.*)*',
-    component: () => import('@/views/404.vue'),
+    redirect: '/',
   },
   {
     path: '/posts',
@@ -25,6 +26,7 @@ const baseRouter: RouteRecordRaw[] = [
     name: 'appTest',
     component: () => import('@/views/appTest/index.vue'),
   },
+
 ]
 
 export default baseRouter

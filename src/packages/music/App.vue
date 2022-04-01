@@ -5,7 +5,8 @@
   >
     <div class="flex h-[calc(100%-var(--control-h))]">
       <Aside />
-      <Home />
+      <!-- <Home /> -->
+      <router-view />
     </div>
     <Control />
   </div>
@@ -14,7 +15,7 @@
 <script setup lang="ts">
 import Aside from './components/Aside.vue'
 import Control from './components/Control.vue'
-import Home from './components/Home.vue'
+// import Home from './components/Home.vue'
 </script>
 
 <style scoped>

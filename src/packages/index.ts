@@ -8,8 +8,9 @@ const appList: IApp[] = [
     icon: getAssetsImages('apps/music163.svg'),
     key: 'music',
     type: IAppType.App,
-    openType: IOpenType.Component,
-    component: markRaw(defineAsyncComponent(() => import('./music/index')))!,
+    openType: IOpenType.Router,
+    router: () => import('./music/router'),
+    // component: markRaw(defineAsyncComponent(() => import('./music/index')))!,
   }, {
     name: 'vueue文档',
     icon: getAssetsImages('apps/douyu.svg'),

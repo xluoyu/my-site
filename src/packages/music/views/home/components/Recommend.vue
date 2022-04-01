@@ -21,7 +21,7 @@
 
 <script setup lang="ts">
 import type { Ref } from 'vue'
-import { GetPlayList } from '../api'
+import { GetPlayList } from '../../../api'
 const playList = ref<any[]>([])
 onMounted(() => {
   GetPlayList().then((res) => {
@@ -46,6 +46,6 @@ const gridColumnsStyle = computed(() => {
   justify-content: center;
   align-content: center;
   grid-gap: 20px;
-  padding: 20px;
+  padding: 0 20px 20px;
 }
 </style>

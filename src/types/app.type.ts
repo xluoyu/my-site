@@ -1,10 +1,12 @@
 import type { DefineComponent } from 'vue'
+import type { RouteRecordRaw } from 'vue-router'
 
 export enum IOpenType {
   Component = 'Component', // 内部组件
   Iframe = 'Iframe', // Iframe
   Qiankun = 'Qiankun', // Qiankun
   Blank = 'Blank', // 新页面
+  Router = 'Router', // 子路由
 }
 
 export enum IAppType {
@@ -35,4 +37,9 @@ interface _IApp_Url extends _IApp {
   pageUrl: string
 }
 
-export type IApp = _IApp_Component | _IApp_Url
+interface _IApp_Router extends _IApp {
+  openType: IOpenType.Router
+  router: any
+}
+
+export type IApp = _IApp_Component | _IApp_Url | _IApp_Router

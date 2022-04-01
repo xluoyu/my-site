@@ -14,7 +14,7 @@
     <template #title>
       <div class="action-bar">
         <div class="flex items-center">
-          <template v-if="curApp?.openType && curApp.openType !== IOpenType.Component">
+          <template v-if="curApp?.openType && curApp.openType !== IOpenType.Component && curApp.openType !== IOpenType.Router">
             <div
               class="action-btn hover:(bg-cyan-600 text-light-50)"
               title="访问原网站"
@@ -86,7 +86,10 @@
           </template>
         </Suspense>
       </template>
-      <template v-if="curApp?.openType === IOpenType.Iframe">
+      <template v-else-if="curApp?.openType === IOpenType.Router">
+        <router-view />
+      </template>
+      <template v-else-if="curApp?.openType === IOpenType.Iframe">
         <iframe
           :src="curApp.pageUrl"
           frameborder="0"
