@@ -4,6 +4,7 @@
   "author": "一只死兔子",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://my-site-6jhvp4kwy-xluoyu.vercel.app/#/",
   "scripts": {
     "dev": "vite",
     "build": "npm run pn && vue-tsc --noEmit && vite build",
