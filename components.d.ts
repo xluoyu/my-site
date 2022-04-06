@@ -13,6 +13,9 @@ declare module 'vue' {
     ElSpace: typeof import('element-plus/es')['ElSpace']
     ElTag: typeof import('element-plus/es')['ElTag']
     Post: typeof import('./src/components/Post.vue')['default']
+    README: typeof import('./src/components/shareElement/README.md')['default']
+    ShareElement: typeof import('./src/components/shareElement/index.vue')['default']
+    Test: typeof import('./src/components/shareElement/test.vue')['default']
   }
 }
 

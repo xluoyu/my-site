@@ -19,6 +19,7 @@
             {{ item.label }} ({{ item.count }})
           </el-tag>
         </el-space>
+        <Test />
       </div>
     </div>
   </el-scrollbar>
@@ -26,6 +27,7 @@
 
 <script setup lang="ts">
 import tagsJSON from '@/posts/tags.json'
+import Test from '@/components/shareElement/test.vue'
 
 const tags = Object.keys(tagsJSON).map((key) => {
   return {

@@ -2,6 +2,9 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
 import Container from './layout/container.vue'
+import shareElement from '@/components/shareElement/index.vue'
+import Test from '@/components/shareElement/test.vue'
+
 </script>
 
 <template>
@@ -13,6 +16,10 @@ import Container from './layout/container.vue'
     >
       <router-view />
     </transition>
+
+    <shareElement>
+      <Test />
+    </shareElement>
   </Container>
 </template>
 
