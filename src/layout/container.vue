@@ -4,7 +4,7 @@
     <Aside />
     <div class="main">
       <TopBar />
-      <router-view />
+      <slot />
     </div>
   </div>
 </template>
