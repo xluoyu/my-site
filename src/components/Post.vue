@@ -1,5 +1,5 @@
 <template>
-  <div class="px-14 py-7 markdown-bg">
+  <div class="px-14 py-7">
     <div class>
       <h3 class="text-2xl">
         {{ frontmatter.title }}
