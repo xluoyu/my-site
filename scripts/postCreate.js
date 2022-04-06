@@ -1,9 +1,9 @@
-import fs from 'fs'
-import path from 'path'
-import inquirer from 'inquirer'
-import dayjs from 'dayjs'
-import packages from '../package.json'
-import postTags from '../src/posts/tags.json'
+const fs = require('fs')
+const path = require('path')
+const inquirer = require('inquirer')
+const dayjs = require('dayjs')
+const packages = require('../package.json')
+const postTags = require('../src/posts/tags.json')
 
 const tags = Object.keys(postTags)
 const promptList = [

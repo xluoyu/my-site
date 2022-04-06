@@ -1,2 +1,2 @@
-src/posts/*.md
+src/posts/**/*.md
 scripts/*.js
