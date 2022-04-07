@@ -16,7 +16,7 @@ const curApp = appList.find(e => e.key === appName)
 
 const { openApp } = useAppLayoutStore
 if (curApp) {
-  openApp(curApp)
+  openApp(curApp, true)
 } else {
   alert('未找到测试app')
 }

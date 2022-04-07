@@ -5,7 +5,7 @@
       :key="item.key"
       class="app"
       :class="{'status1': outCount === index, 'status2': outCount === index - 1 || outCount === index + 1}"
-      @mouseover="mouseoverItem(index)"
+      @mouseover="(e) => mouseoverItem(e, index)"
       @mouseout="mouseoutItem()"
       @click="openApp(item)"
     >
@@ -27,7 +27,7 @@ const { list } = useMiniAppListStore
 
 const outCount = ref<number | null>(null)
 
-const mouseoverItem = (index: number) => {
+const mouseoverItem = (e: MouseEvent, index: number) => {
   outCount.value = index
 }
 const mouseoutItem = () => {

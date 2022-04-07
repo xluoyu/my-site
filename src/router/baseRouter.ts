@@ -25,8 +25,8 @@ const baseRouter: RouteRecordRaw[] = [
     path: '/appTest/:appName',
     name: 'appTest',
     component: () => import('@/views/appTest/index.vue'),
+    children: [],
   },
-
 ]
 
 export default baseRouter

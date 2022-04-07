@@ -1,7 +1,9 @@
 <template>
   <div class="w-full sticky top-0 theme-bg pb-4">
     <el-input
+      v-model="keywords"
       placeholder="搜点什么"
+      clearable
       class="input-transparent search"
     >
       <template #prefix>
@@ -16,6 +18,7 @@
 <script setup lang="ts">
 import { Search } from '@element-plus/icons-vue'
 
+const keywords = ref('')
 </script>
 
 <style lang="less" scoped>

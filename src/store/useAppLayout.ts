@@ -32,13 +32,14 @@ export const useAppLayoutStore = (() => {
    * 默认主路由为 app 的 key
    * @param app
    */
-  const loadAppRoutes = async(app: IApp) => {
+  const loadAppRoutes = async(app: IApp, isTest?: boolean) => {
     if (app.openType === IOpenType.Router) {
       const routes = await app.router().then((res) => {
         return res.default
       })
+      console.log(routes)
       routes.forEach((route) => {
-        router.addRoute('home', route)
+        router.addRoute(isTest ? 'appTest' : 'home', route)
       })
       nextTick(() => {
         router.push(app.key)
@@ -52,7 +53,7 @@ export const useAppLayoutStore = (() => {
   }
 
   // 打开App
-  const openApp = (app: IApp) => {
+  const openApp = (app: IApp, isTest?: boolean) => {
     switch (app.openType) {
       case IOpenType.Component:
       case IOpenType.Iframe:
@@ -63,7 +64,7 @@ export const useAppLayoutStore = (() => {
       case IOpenType.Router:
         toggleAppLayout()
         curApp.value = app
-        loadAppRoutes(app)
+        loadAppRoutes(app, isTest)
         break
       default:
         openWindow()
