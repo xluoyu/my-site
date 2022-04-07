@@ -6,7 +6,6 @@
     <p class="text-lg  <xl:text-sm py-2">
       <span>{{ curDate }}</span> <span>星期{{ curDay }}</span>
     </p>
-    <Test />
   </div>
 </template>
 
