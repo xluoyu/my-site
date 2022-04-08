@@ -15,7 +15,7 @@ const { appName } = route.params
 const curApp = appList.find(e => e.key === appName)
 
 if (curApp) {
-  openApp(curApp, true)
+  openApp(curApp)
 } else {
   alert('未找到测试app')
 }
