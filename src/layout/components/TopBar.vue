@@ -2,7 +2,7 @@
   <div class="topbar px-2">
     <div class="align-center" />
     <div class="absolute mx-auto -left-50px right-0 max-w-1/2">
-      <MiniAppSpace v-if="route.name == 'home'" />
+      <MiniAppSpace v-if="route?.matched[0]?.name == 'home'" />
       <Search v-if="route?.matched[0]?.name == 'posts-main'" />
     </div>
     <div class="align-center text-$theme-color text-lg ">
@@ -23,9 +23,8 @@ import { Moon, Sunny } from '@element-plus/icons-vue'
 import Weather from './Weather.vue'
 import Search from '@/views/post/components/TopBarSearch.vue'
 import MiniAppSpace from '@/views/home/components/TopBarMiniApp.vue'
-import { useSettingStore } from '@/store/useSetting'
+import { isDark, toggleDark } from '@/store/useSetting'
 const route = useRoute()
-const { isDark, toggleDark } = useSettingStore
 
 </script>
 

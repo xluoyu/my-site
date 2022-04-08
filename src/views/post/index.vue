@@ -33,10 +33,9 @@
 </template>
 
 <script setup lang="ts">
-import { useSettingStore } from '@/store/useSetting'
+import { isDark } from '@/store/useSetting'
 const router = useRouter()
 const postsRoutes = router.getRoutes().filter(e => e.path.includes('/posts/'))
-const { isDark } = useSettingStore
 const allPosts: any = postsRoutes.map((e) => {
   const frontmatter: any = typeof e.meta.frontmatter === 'object' ? e.meta.frontmatter : {}
   const tags = frontmatter.tags

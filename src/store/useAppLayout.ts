@@ -1,15 +1,16 @@
 import { useToggle } from '@vueuse/core'
 import { ElNotification } from 'element-plus'
-import { useMiniAppListStore } from './useMiniAppList'
+import { addApp, removeApp } from './useMiniAppList'
 import { IOpenType } from '@/types/app.type'
 import type { IApp } from '@/types/app.type'
 /**
  * app展示模块
  */
+
 export const useAppLayoutStore = (() => {
   const [showAppLayout, toggleAppLayout] = useToggle(false)
   const [isFullscreen, toggleIsFullscreen] = useToggle(false)
-  const { addApp, removeApp } = useMiniAppListStore
+  // const { addApp, removeApp } = useMiniAppListStore()
 
   const curApp = ref<IApp | null>()
 

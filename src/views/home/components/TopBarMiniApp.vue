@@ -1,7 +1,7 @@
 <template>
   <div class="miniAppSpace">
     <div
-      v-for="(item, index) in list"
+      v-for="(item, index) in miniAppList"
       :key="item.key"
       class="app"
       :class="{'status1': outCount === index, 'status2': outCount === index - 1 || outCount === index + 1}"
@@ -19,11 +19,10 @@
 </template>
 
 <script setup lang="ts">
-import { useMiniAppListStore } from '@/store/useMiniAppList'
+import { miniAppList } from '@/store/useMiniAppList'
 import { useAppLayoutStore } from '@/store/useAppLayout'
 
 const { openApp } = useAppLayoutStore
-const { list } = useMiniAppListStore
 
 const outCount = ref<number | null>(null)
 
