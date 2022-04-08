@@ -20,9 +20,7 @@
 
 <script setup lang="ts">
 import { miniAppList } from '@/store/useMiniAppList'
-import { useAppLayoutStore } from '@/store/useAppLayout'
-
-const { openApp } = useAppLayoutStore
+import { openApp } from '@/store/useAppLayout'
 
 const outCount = ref<number | null>(null)
 

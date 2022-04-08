@@ -102,9 +102,8 @@
 
 <script setup lang="ts">
 import { Close, FullScreen, Minus, Promotion } from '@element-plus/icons-vue'
-import { useAppLayoutStore } from '@/store/useAppLayout'
+import { closeApp, curApp, isFullscreen, minimize, openWindow, showAppLayout } from '@/store/useAppLayout'
 import { IOpenType } from '@/types/app.type'
-const { closeApp, minimize, openWindow, showAppLayout, isFullscreen, curApp } = useAppLayoutStore
 const dialogWidth = ref(document.documentElement.clientWidth * 0.7)
 provide('appLayout', {
   dialogWidth,
