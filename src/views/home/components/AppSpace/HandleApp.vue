@@ -1,6 +1,8 @@
 <template>
   <div
     :data-id="app.key"
+    class="handleApp"
+    :class="app.size"
   >
     <slot />
   </div>

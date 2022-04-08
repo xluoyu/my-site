@@ -5,7 +5,10 @@
     @click="openApp(app)"
   >
     <div class="app-space">
-      <template v-if="app.type == IAppType.App">
+      <template v-if="app.size && app[app.size]">
+        <component :is="app[app.size]" />
+      </template>
+      <template v-else>
         <img :src="app.icon">
       </template>
     </div>

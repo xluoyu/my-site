@@ -29,6 +29,10 @@ interface _IApp {
 interface _IApp_Component extends _IApp {
   openType: IOpenType.Component
   component: DefineComponent<{}, {}, any>
+  control?: DefineComponent<{}, {}, any>
+  medium?: DefineComponent<{}, {}, any>
+  big?: DefineComponent<{}, {}, any>
+  small?: DefineComponent<{}, {}, any>
 }
 
 // 当 openType == 其余时，pageUrl 必填
@@ -42,4 +46,4 @@ interface _IApp_Router extends _IApp {
   router: any
 }
 
-export type IApp = _IApp_Component | _IApp_Url | _IApp_Router
+export type IApp = _IApp_Component | _IApp_Url

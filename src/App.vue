@@ -9,6 +9,7 @@ import Container from './layout/container.vue'
     <router-view v-slot="{ Component }">
       <transition
         name="fade"
+        mode="out-in"
       >
         <component :is="Component" />
       </transition>

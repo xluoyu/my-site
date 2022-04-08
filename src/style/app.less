@@ -1,7 +1,19 @@
+.gridSpace {
+  .handleApp{
+    &.medium{
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+    &.big{
+      grid-column: span 4;
+      grid-row: span 2;
+    }
+  }
+}
 .gridSpace .app{
   color: #fff;
-  width: var(--app-width);
-  height: var(--app-height);
+  width: 100%;
+  height: 100%;
   text-align: center;
   margin: 0 auto;
   cursor: pointer;
@@ -18,11 +30,16 @@
   }
   .app-space{
     margin: 0 auto;
-    width: 60px;
-    height: 60px;
+    width: calc(100% - 20px);
+    height: calc(100% - 30px);
     border-radius: 14px;
     transition: transform .2s, box-shadow .4s;
     overflow: hidden;
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
   p{
     line-height: 30px;

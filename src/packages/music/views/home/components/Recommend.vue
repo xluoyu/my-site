@@ -8,12 +8,12 @@
       :key="item.id"
       class="cursor-pointer"
     >
-      <ShareCompoent :op="item.id">
-        <img
-          :src="item.picUrl"
-          alt=""
-        >
-      </ShareCompoent>
+      <!-- <ShareCompoent :op="item.id"> -->
+      <img
+        :src="item.picUrl"
+        alt=""
+      >
+      <!-- </ShareCompoent> -->
       <p class="mt-2 text-sm text-ellipsis-2">
         {{ item.name }}
       </p>
@@ -24,7 +24,7 @@
 <script setup lang="ts">
 import type { Ref } from 'vue'
 import { GetPlayList } from '~/music/api'
-import ShareCompoent from '@/utils/shareComponent'
+// import ShareCompoent from '@/utils/shareComponent'
 const playList = ref<any[]>([])
 onMounted(() => {
   GetPlayList().then((res) => {

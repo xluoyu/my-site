@@ -2,7 +2,7 @@ const router = [
   {
     path: '/music',
     name: 'music',
-    component: () => import('../App.vue'),
+    component: () => import('../components/Layout.vue'),
     redirect: '/music/home',
     children: [
       {

@@ -7,6 +7,13 @@ export function Search(params) {
   })
 }
 
+export function GetSearchSuggest(params) {
+  return Get({
+    url: '/music/searchSuggest',
+    params,
+  })
+}
+
 export function GetPlayList() {
   return Get({
     url: '/music/getPlaylist',
