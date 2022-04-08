@@ -30,7 +30,6 @@ import { openApp } from '@/store/useAppLayout'
 defineProps<{
   app: IApp
 }>()
-
 </script>
 
 <style lang="less" scoped>
