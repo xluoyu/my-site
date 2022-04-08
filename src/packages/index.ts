@@ -14,7 +14,16 @@ const appList: IApp[] = [
     control: markRaw(defineAsyncComponent(() => import('./music/Control.vue')))!,
     medium: markRaw(defineAsyncComponent(() => import('./music/Medium.vue')))!,
     big: markRaw(defineAsyncComponent(() => import('./music/Big.vue')))!,
-  }, {
+  },
+  {
+    name: '音乐播放器',
+    icon: getAssetsImages('apps/music163.svg'),
+    key: 'music1',
+    type: IAppType.App,
+    openType: IOpenType.Component,
+    component: markRaw(defineAsyncComponent(() => import('./music/App.vue')))!,
+  },
+  {
     name: 'vueue文档',
     icon: getAssetsImages('apps/douyu.svg'),
     key: 'chat1',
@@ -33,6 +42,7 @@ const appList: IApp[] = [
     icon: getAssetsImages('apps/music163.svg'),
     key: 'chat3',
     type: IAppType.App,
+    size: 'medium',
     openType: IOpenType.Iframe,
     pageUrl: 'https://vueuse.org/shared/useToggle/#usage',
   }, {

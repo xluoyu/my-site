@@ -2,14 +2,21 @@
   <!-- 普通app -->
   <div
     class="app"
-    @click="openApp(app)"
   >
     <div class="app-space">
       <template v-if="app.size && app[app.size]">
         <component :is="app[app.size]" />
       </template>
       <template v-else>
-        <img :src="app.icon">
+        <div
+          class="full"
+          @click="openApp(app)"
+        >
+          <img
+            class="full object-cover"
+            :src="app.icon"
+          >
+        </div>
       </template>
     </div>
     <p>{{ app.name }}</p>

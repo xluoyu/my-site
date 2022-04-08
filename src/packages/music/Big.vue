@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="h-full bg-red-300">
     大的
   </div>
 </template>

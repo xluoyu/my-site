@@ -23,6 +23,10 @@ export default defineConfig({
           '-webkit-line-clamp': '3',
           'overflow': 'hidden',
         },
+        '.full': {
+          width: '100%',
+          height: '100%',
+        },
       }
       addUtilities(newUtilities)
     }),

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="h-full bg-blue-300">
     中号
   </div>
 </template>
