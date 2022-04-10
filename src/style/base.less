@@ -2,6 +2,7 @@
 @import './mixins.less';
 @import './app.less';
 @import './markdown.less';
+@import './element.less';
 
 html,body,h1,h2,h3,h4,h5,h6,div,dl,dt,dd,ul,ol,li,p,blockquote,pre,hr,figure,table,caption,th,td,form,fieldset,legend,input,button,textarea,menu,span{margin:0;padding:0;}
 header,footer,section,article,aside,nav,hgroup,address,figure,figcaption,menu,details{display:block;}
@@ -34,32 +35,6 @@ body {
   backdrop-filter: blur(4px);
 }
 
-.scrollbar-color{
-  &::-webkit-scrollbar
-  {
-    width: 4px;
-    height: 8px;
-  }
-  
-  /*定义滚动条轨道 内阴影+圆角*/
-  &::-webkit-scrollbar-track
-  {
-    border-radius: 10px;
-    background-color: transparent;
-  }
-  
-  /*定义滑块 内阴影+圆角*/
-  &::-webkit-scrollbar-thumb
-  {
-    border-radius: 10px;
-    background-color: #e4e7ed;
-  }
-  // 滚动条右下角方块
-  &::-webkit-scrollbar-corner{
-    background-color: transparent;
-  }
-}
-
 .input-transparent .el-input__inner {
   color: var(--theme-color);
   background: transparent;
@@ -73,4 +48,12 @@ body {
 .theme-bg{
   background: var(--theme-bg) !important;
   transition: background .2s;
+}
+
+
+.miniClick{
+  transition: transform .3s;
+  &:active{
+    transform: scale(0.95);
+  }
 }

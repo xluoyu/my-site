@@ -10,6 +10,16 @@ const router = [
         name: 'music-home',
         component: () => import('../views/home/index.vue'),
       },
+      {
+        path: 'search',
+        name: 'music-search',
+        component: () => import('../views/search/index.vue'),
+      },
+      {
+        path: 'artist',
+        name: 'music-artist',
+        component: () => import('../views/search/artist.vue'),
+      },
     ],
   },
 ]

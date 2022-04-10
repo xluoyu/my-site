@@ -9,6 +9,7 @@
         class="mb-1px flex-1"
       >
         <el-scrollbar>
+          <Search />
           <router-view />
         </el-scrollbar>
       </div>
@@ -20,6 +21,7 @@
 <script setup lang="ts">
 import Aside from './Aside.vue'
 import Control from './Control.vue'
+import Search from './Search.vue'
 // import Home from './components/Home.vue'
 
 </script>
