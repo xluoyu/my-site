@@ -17,7 +17,7 @@
       "@/*": ["./src/*"],
       "~/*": ["./src/packages/*"]
     },
-    "types": ["element-plus/global", "vite-plugin-pages/client", "jest",]
+    "types": ["element-plus/global", "vite-plugin-pages/client", "jest"]
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "scripts/**/*.ts", "auto-imports.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
