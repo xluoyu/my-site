@@ -4,7 +4,7 @@
   "author": "一只死兔子",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://my-site-6jhvp4kwy-xluoyu.vercel.app/#/",
+  "homepage": "https://corgi-vert.vercel.app/",
   "scripts": {
     "dev": "vite",
     "build": "npm run pn && vue-tsc --noEmit && vite build",
@@ -25,12 +25,12 @@
     "colorthief": "^2.3.2",
     "dayjs": "^1.10.8",
     "element-plus": "^2.0.4",
-    "pinia": "^2.0.11",
     "prism-theme-vars": "^0.2.2",
     "prismjs": "^1.27.0",
     "sortablejs": "^1.15.0",
     "vue": "^3.2.25",
-    "vue-router": "^4.0.12"
+    "vue-router": "^4.0.12",
+    "vue-starport": "^0.2.4"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.18.8",
