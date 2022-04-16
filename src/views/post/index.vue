@@ -7,20 +7,28 @@
         :to="item.path"
         class="post-item"
       >
-        <div>
-          <h2 class="text-base mb-2 mr-2 inline">
-            {{ item.title }}
-          </h2>
-          <el-tag
-            v-for="tag in item.tags"
-            :key="tag.label"
-            class="mx-1"
-            :type="tag.type"
-            :effect="isDark ? 'dark' : 'light'"
-            size="small"
+        <div class="flex justify-between">
+          <Starport
+            :port="'postTitle-' + item.path"
+            :duration="400"
+            class="text-base flex-1"
           >
-            {{ tag.label }}
-          </el-tag>
+            <h2 class="white-space-nowrap">
+              {{ item.title }}
+            </h2>
+          </Starport>
+          <div>
+            <el-tag
+              v-for="tag in item.tags"
+              :key="tag.label"
+              class="mx-1"
+              :type="tag.type"
+              :effect="isDark ? 'dark' : 'light'"
+              size="small"
+            >
+              {{ tag.label }}
+            </el-tag>
+          </div>
         </div>
         <time class="text-xs">{{ item.createTime }}</time>
       </router-link>
@@ -33,6 +41,7 @@
 </template>
 
 <script setup lang="ts">
+import { Starport } from 'vue-starport'
 import { isDark } from '@/store/useSetting'
 const router = useRouter()
 const postsRoutes = router.getRoutes().filter(e => e.path.includes('/posts/'))
@@ -61,6 +70,7 @@ const allPosts: any = postsRoutes.map((e) => {
     tags,
   }
 })
+console.log(allPosts)
 const route = useRoute()
 
 const posts = computed(() => {

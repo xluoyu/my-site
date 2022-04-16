@@ -1,9 +1,15 @@
 <template>
   <div class="px-14 py-7">
     <div class>
-      <h3 class="text-2xl">
-        {{ frontmatter.title }}
-      </h3>
+      <Starport
+        :port="'postTitle-' + route.path"
+        :duration="400"
+        class="h-8"
+      >
+        <h2 class="text-2xl">
+          {{ frontmatter.title }}
+        </h2>
+      </Starport>
       <h5 class="text-sm mt-3">
         {{ frontmatter.author }}
         <time class="text-xs text-gray-500">{{ frontmatter.createTime }}</time>
@@ -24,6 +30,7 @@
 </template>
 
 <script setup lang="ts">
+import { Starport } from 'vue-starport'
 const route = useRoute()
 const frontmatter: any = route.meta.frontmatter
 </script>
