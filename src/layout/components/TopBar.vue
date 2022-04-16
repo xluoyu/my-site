@@ -23,7 +23,7 @@ import { Moon, Sunny } from '@element-plus/icons-vue'
 import Weather from './Weather.vue'
 import Search from '@/views/post/components/TopBarSearch.vue'
 import MiniAppSpace from '@/views/home/components/TopBarMiniApp.vue'
-import { isDark, toggleDark } from '@/store/useSetting'
+import { isDark, toggleDark } from '@/composables/useSetting'
 const route = useRoute()
 
 </script>

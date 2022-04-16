@@ -28,6 +28,7 @@
     "prism-theme-vars": "^0.2.2",
     "prismjs": "^1.27.0",
     "sortablejs": "^1.15.0",
+    "v-contextmenu": "^3.0.0",
     "vue": "^3.2.25",
     "vue-router": "^4.0.12",
     "vue-starport": "^0.2.4"

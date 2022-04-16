@@ -102,7 +102,7 @@
 
 <script setup lang="ts">
 import { Close, FullScreen, Minus, Promotion } from '@element-plus/icons-vue'
-import { closeApp, curApp, isFullscreen, minimize, openWindow, showAppLayout } from '@/store/useAppLayout'
+import { closeApp, curApp, isFullscreen, minimize, openWindow, showAppLayout } from '@/composables/useAppLayout'
 import { IOpenType } from '@/types/app.type'
 const dialogWidth = ref(document.documentElement.clientWidth * 0.7)
 provide('appLayout', {

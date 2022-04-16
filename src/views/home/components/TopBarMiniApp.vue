@@ -19,8 +19,8 @@
 </template>
 
 <script setup lang="ts">
-import { miniAppList } from '@/store/useMiniAppList'
-import { openApp } from '@/store/useAppLayout'
+import { miniAppList } from '@/composables/useMiniAppList'
+import { openApp } from '@/composables/useAppLayout'
 
 const outCount = ref<number | null>(null)
 

@@ -13,7 +13,7 @@
 <!-- https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1647382529790-b8af005d6031?ixid=MnwxMjA3fDB8MXxyYW5kb218fHx8fHx8fHwxNjQ3OTQxMzcx&ixlib=rb-1.2.1&w=2560&fm=jpg -->
 <script lang="ts" setup>
 import ColorThief from 'colorthief'
-import { isDark } from '@/store/useSetting'
+import { isDark } from '@/composables/useSetting'
 const bgRef = ref()
 const colorThief = new ColorThief()
 const imgColor = ref(false)

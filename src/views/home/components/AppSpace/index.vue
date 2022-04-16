@@ -8,18 +8,15 @@
       :key="item.key"
       :app="item"
     >
-      <App :app="item" />
+      <App
+        v-contextmenu:appContextMenu=""
+        :app="item"
+      />
     </HnadleApp>
 
-    <el-popover
-      ref="popoverRef"
-      :virtual-ref="buttonRef"
-      trigger="click"
-      title="With title"
-      virtual-triggering
-    >
-      <span> Some content </span>
-    </el-popover>
+    <v-contextmenu ref="appContextMenu">
+      <v-contextmenu-item>菜单1</v-contextmenu-item>
+    </v-contextmenu>
   </div>
 </template>
 
@@ -27,7 +24,8 @@
 import App from './App.vue'
 import HnadleApp from './HandleApp.vue'
 import AppList from '@/packages'
-import { useAppDrag } from '@/store/useAppDrag'
+import { useAppDrag } from '@/composables/useAppDrag'
+import { appContextMenu } from '@/composables/useAppContextMenu'
 
 onMounted(() => {
   useAppDrag('.gridSpace')

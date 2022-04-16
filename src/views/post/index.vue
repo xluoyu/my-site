@@ -42,7 +42,7 @@
 
 <script setup lang="ts">
 import { Starport } from 'vue-starport'
-import { isDark } from '@/store/useSetting'
+import { isDark } from '@/composables/useSetting'
 const router = useRouter()
 const postsRoutes = router.getRoutes().filter(e => e.path.includes('/posts/'))
 const allPosts: any = postsRoutes.map((e) => {

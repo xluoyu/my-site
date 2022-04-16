@@ -7,7 +7,7 @@
 <script setup lang="ts">
 import AppLayout from '@/views/home/components/AppDialog/index.vue'
 import appList from '@/packages'
-import { openApp } from '@/store/useAppLayout'
+import { openApp } from '@/composables/useAppLayout'
 
 const route = useRoute()
 const { appName } = route.params
