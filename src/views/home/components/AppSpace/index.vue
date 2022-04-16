@@ -10,6 +10,16 @@
     >
       <App :app="item" />
     </HnadleApp>
+
+    <el-popover
+      ref="popoverRef"
+      :virtual-ref="buttonRef"
+      trigger="click"
+      title="With title"
+      virtual-triggering
+    >
+      <span> Some content </span>
+    </el-popover>
   </div>
 </template>
 
