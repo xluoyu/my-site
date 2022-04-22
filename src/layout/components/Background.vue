@@ -2,7 +2,7 @@
   <div class="container-bg">
     <img
       ref="bgRef"
-      src="https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1647382529790-b8af005d6031?ixid=MnwxMjA3fDB8MXxyYW5kb218fHx8fHx8fHwxNjQ3OTQxMzcx&ixlib=rb-1.2.1&w=2560&fm=jpg"
+      src="https://www4.bing.com//th?id=OHR.NorwayBoulder_ZH-CN8749661500_1920x1080.jpg"
       alt=""
       crossOrigin="https://itab.s3.ladydaily.com"
       @load="loadImg"
@@ -17,12 +17,15 @@ import { isDark } from '@/store/useSetting'
 const bgRef = ref()
 const colorThief = new ColorThief()
 const imgColor = ref(false)
+const rgbArr = ref<number[]>([])
 const loadImg = () => {
-  const rgbArr = colorThief.getColor(bgRef.value)
+  rgbArr.value = colorThief.getColor(bgRef.value)
+  // document.documentElement.style.setProperty('--aside-bg', rgbArr.value.join(','))
   imgColor.value = 0.213 * rgbArr[0] + 0.715 * rgbArr[1] + 0.072 * rgbArr[2] > 255 / 2
 }
 
 const changeStyle = (isDark) => {
+  // document.documentElement.style.setProperty('--aside-bg', isDark ? '218,223,229' : '48, 48, 48')
   document.documentElement.style.setProperty('--aside-bg', isDark ? '218,223,229' : '48, 48, 48')
   document.documentElement.style.setProperty('--aside-color', isDark ? '34,34,34' : '233,233,233')
 }
