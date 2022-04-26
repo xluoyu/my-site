@@ -60,6 +60,13 @@ const appList: IApp[] = [
     openType: IOpenType.Iframe,
     pageUrl: 'https://vueuse.org/shared/useToggle/#usage',
   },
+  {
+    name: 'app组',
+    key: 'appGroup',
+    type: IAppType.App,
+    openType: IOpenType.Component,
+    component: markRaw(defineAsyncComponent(() => import('./appGroup/index.vue')))!,
+  },
 ]
 
 export default appList

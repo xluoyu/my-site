@@ -1,6 +1,6 @@
 <template>
-  <div class="text-light-50 text-center time-container mt-6 <xl:mt-3">
-    <h2 class="text-6xl <xl:text-4xl">
+  <div class="text-light-50 text-center time-container mt-8 <xl:mt-3">
+    <h2 class="text-6xl font-medium <xl:text-4xl">
       {{ cutTime }}
     </h2>
     <p class="text-lg  <xl:text-sm py-2">
@@ -12,6 +12,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { numAddZero } from '@/utils'
+import { GetHoliday } from '@/api/common'
 
 const dayArr = {
   1: '一',
@@ -32,10 +33,13 @@ const timeFun = () => {
   curDay.value = dayArr[time.getDay()]
   cutTime.value = `${numAddZero(time.getHours())}:${numAddZero(time.getMinutes())}`
 }
-timeFun()
-setInterval(() => {
+
+onMounted(() => {
   timeFun()
-}, 1000)
+  setInterval(() => {
+    timeFun()
+  }, 1000)
+})
 
 </script>
 

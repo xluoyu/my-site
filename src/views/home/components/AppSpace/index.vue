@@ -9,13 +9,17 @@
       :app="item"
     >
       <App
-        v-contextmenu:appContextMenu=""
+        v-contextmenu:appContextMenu="1321"
         :app="item"
       />
     </HnadleApp>
 
     <v-contextmenu ref="appContextMenu">
-      <v-contextmenu-item>菜单1</v-contextmenu-item>
+      <template #default="data">
+        <v-contextmenu-item @click="showTest(data)">
+          菜单1
+        </v-contextmenu-item>
+      </template>
     </v-contextmenu>
   </div>
 </template>
@@ -30,6 +34,10 @@ import { appContextMenu } from '@/composables/useAppContextMenu'
 onMounted(() => {
   useAppDrag('.gridSpace')
 })
+
+const showTest = (data) => {
+  console.log(data)
+}
 
 </script>
 

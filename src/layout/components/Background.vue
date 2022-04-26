@@ -2,41 +2,25 @@
   <div class="container-bg">
     <img
       ref="bgRef"
-      src="https://www4.bing.com//th?id=OHR.NorwayBoulder_ZH-CN8749661500_1920x1080.jpg"
+      src="https://images.unsplash.com/photo-1650853282913-9a3ecb60aa53?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"
       alt=""
       crossOrigin="https://itab.s3.ladydaily.com"
       @load="loadImg"
     >
   </div>
 </template>
-<!-- https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1647705985427-337fc15ff6bc?ixid=MnwxMjA3fDB8MXxyYW5kb218fHx8fHx8fHwxNjQ3OTQxNTk1&ixlib=rb-1.2.1&w=2560&fm=jpg -->
+<!-- https://images.unsplash.com/photo-1650853282913-9a3ecb60aa53?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80 -->
 <!-- https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1647382529790-b8af005d6031?ixid=MnwxMjA3fDB8MXxyYW5kb218fHx8fHx8fHwxNjQ3OTQxMzcx&ixlib=rb-1.2.1&w=2560&fm=jpg -->
 <script lang="ts" setup>
 import ColorThief from 'colorthief'
-import { isDark } from '@/composables/useSetting'
+import { bgThemeColor, isDark } from '@/composables/useSetting'
 const bgRef = ref()
 const colorThief = new ColorThief()
-const imgColor = ref(false)
 const rgbArr = ref<number[]>([])
 const loadImg = () => {
-  rgbArr.value = colorThief.getColor(bgRef.value)
-  // document.documentElement.style.setProperty('--aside-bg', rgbArr.value.join(','))
-  imgColor.value = 0.213 * rgbArr[0] + 0.715 * rgbArr[1] + 0.072 * rgbArr[2] > 255 / 2
+  bgThemeColor.value = colorThief.getColor(bgRef.value)
+  isDark.value = 0.3 * bgThemeColor.value[0] + 0.6 * bgThemeColor.value[1] + 0.1 * bgThemeColor.value[2] < 70
 }
-
-const changeStyle = (isDark) => {
-  // document.documentElement.style.setProperty('--aside-bg', isDark ? '218,223,229' : '48, 48, 48')
-  document.documentElement.style.setProperty('--aside-bg', isDark ? '218,223,229' : '48, 48, 48')
-  document.documentElement.style.setProperty('--aside-color', isDark ? '34,34,34' : '233,233,233')
-}
-
-watchEffect(() => {
-  if (isDark.value) {
-    changeStyle(false)
-  } else {
-    changeStyle(imgColor.value)
-  }
-})
 
 </script>
 
