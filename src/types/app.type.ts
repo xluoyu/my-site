@@ -15,12 +15,14 @@ export enum IAppType {
   AppArray = 'AppArray', // 应用组
 }
 
+export type IAppSize = 'big' | 'medium' | 'small' | 'auto'
+
 interface _IApp {
   name: string // app名称
   icon?: string // 图标
   key: string
   type: IAppType // 应用类型
-  size?: 'big' | 'medium' | 'small' // 尺寸
+  size?: IAppSize // 尺寸
   status?: boolean // 开发状态
   children?: IApp[] // 应用组
 }

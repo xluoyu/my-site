@@ -4,13 +4,13 @@
     class="gridSpace"
   >
     <HnadleApp
-      v-for="item in AppList"
-      :key="item.key"
-      :app="item"
+      v-for="item in userAppList"
+      :key="item.id"
+      :user-app="item"
     >
       <App
         v-contextmenu:appContextMenu="1321"
-        :app="item"
+        :user-app="item"
       />
     </HnadleApp>
 
@@ -27,9 +27,9 @@
 <script setup lang="ts">
 import App from './App.vue'
 import HnadleApp from './HandleApp.vue'
-import AppList from '@/packages'
 import { useAppDrag } from '@/composables/useAppDrag'
 import { appContextMenu } from '@/composables/useAppContextMenu'
+import { userAppList } from '@/composables/useInfo'
 
 onMounted(() => {
   useAppDrag('.gridSpace')
@@ -45,7 +45,7 @@ const showTest = (data) => {
 .gridSpace{
   display:grid;
   grid-auto-flow: row dense;
-  grid-template-columns: repeat(auto-fill, calc(var(--app-width) + 10px));
+  grid-template-columns: repeat(auto-fill, calc(var(--app-width)));
   grid-template-rows: repeat(auto-fill, var(--app-height));
   grid-gap: var(--grid-row-gap) var(--grid-col-gap);
   justify-content: center;

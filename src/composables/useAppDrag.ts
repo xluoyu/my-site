@@ -15,6 +15,7 @@ export const useAppDrag = (el: string) => {
     animation: 400,
     ghostClass: 'box-ghost',
     handle: '.app',
+    filter: '.no-drag',
     onEnd() {
       console.log(mainSortable.toArray())
     },

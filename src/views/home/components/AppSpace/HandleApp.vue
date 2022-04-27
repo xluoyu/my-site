@@ -1,20 +1,45 @@
 <template>
   <div
-    :data-id="app.key"
+    ref="curApp"
+    :data-id="userApp.key"
     class="handleApp"
-    :class="app.size"
+    :class="userApp.size"
     @click.right.prevent="showContextmenu"
   >
-    <slot />
+    <div
+      class="app relative"
+    >
+      <slot />
+
+      <div
+        v-if="userApp.key === 'appGroup'"
+        class="w-2 h-2 absolute bottom-0 right-10px bg-light-600"
+        style="cursor: nw-resize"
+        @mouseenter="addNoDarg"
+        @mouseleave="removeNoDarg"
+        @mousedown.stop="resizeStart"
+      />
+    </div>
+    <p>{{ userApp.name }}</p>
   </div>
 </template>
 
 <script setup lang="ts">
-import type { IApp } from '@/types/app.type'
+import type { IUserAppOptionsWithApp } from '@/composables/useInfo'
 
 defineProps<{
-  app: IApp
+  userApp: IUserAppOptionsWithApp
 }>()
+const curApp = ref<HTMLElement | null>()
+const addNoDarg = () => {
+  curApp.value!.classList.add('no-drag')
+}
+const removeNoDarg = () => {
+  curApp.value!.classList.remove('no-drag')
+}
+const resizeStart = (e) => {
+  console.log(e)
+}
 
 const showContextmenu = (e) => {
   console.log(e)

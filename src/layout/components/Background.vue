@@ -34,6 +34,7 @@ const loadImg = () => {
     object-fit: cover;
     filter: blur(1px);
     transition: filter .2s;
+    transform: scale(1.1); // 处理blur带来的四周泛白问题
   }
 }
 .dark .container-bg img{
