@@ -2,16 +2,14 @@ import type { IApp } from '@/types/app.type'
 import { IAppType, IOpenType } from '@/types/app.type'
 import { getAssetsImages } from '@/utils'
 
-const appList: IApp[] = [
+const appList: readonly IApp[] = [
   {
     name: '音乐播放器',
     icon: getAssetsImages('apps/music163.svg'),
     key: 'music',
     type: IAppType.App,
     openType: IOpenType.Component,
-    size: 'big',
     component: markRaw(defineAsyncComponent(() => import('./music/App.vue')))!,
-    control: markRaw(defineAsyncComponent(() => import('./music/Control.vue')))!,
     medium: markRaw(defineAsyncComponent(() => import('./music/Medium.vue')))!,
     big: markRaw(defineAsyncComponent(() => import('./music/Big.vue')))!,
   },
@@ -59,6 +57,16 @@ const appList: IApp[] = [
     type: IAppType.App,
     openType: IOpenType.Iframe,
     pageUrl: 'https://vueuse.org/shared/useToggle/#usage',
+  },
+  {
+    name: 'app组',
+    key: 'appGroup',
+    type: IAppType.App,
+    openType: IOpenType.Component,
+    component: markRaw(defineAsyncComponent(() => import('./appGroup/index.vue')))!,
+    big: markRaw(defineAsyncComponent(() => import('./appGroup/index.vue'))),
+    small: markRaw(defineAsyncComponent(() => import('./appGroup/index.vue'))),
+    medium: markRaw(defineAsyncComponent(() => import('./appGroup/index.vue'))),
   },
 ]
 

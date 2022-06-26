@@ -1,5 +1,13 @@
 .gridSpace {
   .handleApp{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    p{
+      line-height: 30px;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
     &.medium{
       grid-column: span 2;
       grid-row: span 2;
@@ -13,8 +21,7 @@
 .gridSpace .app{
   color: #fff;
   width: 100%;
-  height: 100%;
-  text-align: center;
+  flex: 1;
   margin: 0 auto;
   cursor: pointer;
   user-select: none;
@@ -31,14 +38,11 @@
   .app-space{
     margin: 0 auto;
     width: calc(100% - 20px);
-    height: calc(100% - 30px);
+    // height: calc(100% - 30px);
+    height:100%;
     border-radius: 14px;
     transition: transform .2s, box-shadow .4s;
     overflow: hidden;
-  }
-  p{
-    line-height: 30px;
-    font-size: 14px;
   }
 }
 .box-ghost{
@@ -46,6 +50,19 @@
 }
 .el-overlay-dialog {
   overflow: hidden !important;
+}
+.no-elDialog{
+  .el-dialog__header{
+    // display: none;
+    padding: 0;
+    margin: 0;
+  }
+  .el-dialog__footer{
+    display: none;
+  }
+  .el-dialog__body{
+    padding: 0;
+  }
 }
 .appLayout{
   --appLayout-topbar-h: 24px;
@@ -61,14 +78,6 @@
   &.is-fullscreen{
     height: 100vh !important;
     width: 100vw !important;
-  }
-  .el-dialog__header{
-    // display: none;
-    padding: 0;
-    margin: 0;
-  }
-  .el-dialog__footer{
-    display: none;
   }
   .el-dialog__body{
     position: relative;

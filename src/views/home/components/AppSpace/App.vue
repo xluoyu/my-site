@@ -1,37 +1,39 @@
 <template>
   <!-- 普通app -->
-  <div
-    class="app"
-  >
-    <div class="app-space">
-      <template v-if="app.size && app[app.size]">
-        <component :is="app[app.size]" />
-      </template>
-      <template v-else>
-        <div
-          class="full"
-          @click="openApp(app)"
+  <div class="app-space">
+    <template v-if="userApp.size && userApp.app[userApp.size]">
+      <component
+        :is="userApp.app[userApp.size]"
+        :id="userApp.id"
+        :apps="userApp.children"
+        :name="userApp.name"
+      />
+    </template>
+    <template v-else>
+      <div
+        class="full"
+        @click="openApp(userApp.app)"
+      >
+        <img
+          class="full object-cover"
+          :src="userApp.app.icon"
         >
-          <img
-            class="full object-cover"
-            :src="app.icon"
-          >
-        </div>
-      </template>
-    </div>
-    <p>{{ app.name }}</p>
+      </div>
+    </template>
   </div>
 </template>
 
 <script setup lang="ts">
-import type { IApp } from '@/types/app.type'
-import { IAppType } from '@/types/app.type'
 import { openApp } from '@/composables/useAppLayout'
+import type { IUserAppOptionsWithApp } from '@/composables/useInfo'
 // import { appContextMenu } from '@/composables/useAppContextMenu'
 
-defineProps<{
-  app: IApp
+const props = defineProps<{
+  userApp: IUserAppOptionsWithApp
 }>()
+// if (props.userApp.children) {
+//   provide('options-children', props.userApp.children)
+// }
 </script>
 
 <style lang="less" scoped>

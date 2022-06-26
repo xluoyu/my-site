@@ -9,7 +9,7 @@
     :show-close="false"
     draggable
     :fullscreen="isFullscreen"
-    custom-class="appLayout theme-bg"
+    custom-class="no-elDialog appLayout theme-bg"
   >
     <template #title>
       <div class="action-bar theme-bg">

@@ -1,9 +1,9 @@
 <template>
   <div class="w-100vw h-100vh">
-    <Background />
     <Aside />
+    <Background />
     <div class="main">
-      <TopBar />
+      <!-- <TopBar /> -->
       <slot />
     </div>
   </div>

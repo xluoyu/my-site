@@ -1,5 +1,9 @@
 <template>
-  <aside class="aside w-$aside-width">
+  <aside
+    id="aside"
+    class="w-$aside-width"
+    :style="style"
+  >
     <div class="logo">
       <img
         src="@/assets/logo.png"
@@ -33,6 +37,7 @@
 
 <script setup lang="ts">
 import { HomeFilled, Reading, Setting } from '@element-plus/icons-vue'
+import { bgThemeColor, isDark } from '@/composables/useSetting'
 const pageList = [
   {
     label: '主页',
@@ -46,6 +51,13 @@ const pageList = [
   },
 ]
 
+const style = computed(() => {
+  return {
+    '--aside-bg': `rgba(${bgThemeColor.value.join(',')},.6)` || transparent,
+    '--aside-color': isDark.value ? '233,233,233' : '34,34,34',
+  }
+})
+
 const route = useRoute()
 const matchedPaths = computed(() => {
   return route.matched.map(e => e.path)
@@ -53,14 +65,15 @@ const matchedPaths = computed(() => {
 </script>
 
 <style lang="less" scoped>
-.aside{
+#aside{
   position: fixed;
   left: 0;
   top: 0;
   z-index: 5;
   height:100%;
   backdrop-filter: blur(4px);
-  background:rgba(var(--aside-bg), .6) ;
+  background:var(--aside-bg);
+  color: rgb(var(--aside-color));
   transition: background 0.2s;
   .logo{
     padding: 40px 0;
